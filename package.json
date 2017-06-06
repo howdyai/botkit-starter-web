@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "body-parser": "^1.15.2",
-    "botkit": "^0.5",
+    "botkit": "git+https://git@github.com/howdyai/botkit.git#dev/webchannel",
     "botkit-storage-mongo": "^1.0.6",
     "debug": "^2.3.3",
     "express": "^4.14.0",
