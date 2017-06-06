@@ -1,8 +1,8 @@
 # THIS IS EXPERIMENTAL SOFTWARE
 
-This is an experimental and in-development version of Botkit.
+This is an experimental and in-development version of Botkit. Both this starter kit and the related functionality in Botkit are currently incomplete.
 
-Both this starter kit and the related functionality in Botkit are currently incomplete.
+However, it works! And we welcome your input.
 
 See [this Github Issue] to track progress on this project.
 
