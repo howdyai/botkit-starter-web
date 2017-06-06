@@ -6,6 +6,8 @@ However, it works! And we welcome your input.
 
 See [this Github Issue] to track progress on this project.
 
+[View sample app](https://botkit-web.glitch.me/)
+
 # Botkit Starter Kit for Web Bots
 
 This repo contains everything you need to get started building a bot with Botkit and Botkit Studio!
