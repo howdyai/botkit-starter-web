@@ -19,7 +19,7 @@ var env = require('node-env-file');
 env(__dirname + '/.env');
 
 
-if (!process.env.studio_token || !process.env.PORT) {
+if (!process.env.PORT) {
   console.log('Error: Specify studio_token and PORT in environment');
   usage_tip();
   process.exit(1);
@@ -84,6 +84,11 @@ if (process.env.studio_token) {
         });
     });
 } else {
+
+    controller.on('message_received', function(bot, message) {
+      bot.reply(message, 'I need an API token from Botkit Studio to do more stuff. Get one here: https://studio.botkit.ai')
+    });
+
     console.log('~~~~~~~~~~');
     console.log('NOTE: Botkit Studio functionality has not been enabled');
     console.log('To enable, pass in a studio_token parameter with a token from https://studio.botkit.ai/');
