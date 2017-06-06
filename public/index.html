@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+    <body>
+        <div id="message_window">
+            <div class="disconnected">
+                Disconnected... reconnecting!
+            </div>
+            <section>
+                <div id="message_list">
+                    <div id="message_template">
+                        <div class="message {{message.type}}">
+                            {{#if message.typing}}
+                                <div class="typing-indicator">
+                                    ...
+                                </div>
+                            {{/if}}
+                            {{message.text}}
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div id="message_replies">
+            </div>
+            <footer>
+                <form onsubmit="messenger.send(messenger.input.value, event)">
+                    <input type="text" autocomplete="off" id="messenger_input" placeholder="Type here..." />
+                    <button type="submit">Send</button>
+                </form>
+            </footer>
+        </div>
+        <script src="client.js"></script>
+    </body>
+</html>
