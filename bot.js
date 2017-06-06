@@ -31,7 +31,6 @@ var debug = require('debug')('botkit:main');
 var bot_options = {
     studio_token: process.env.studio_token,
     studio_command_uri: process.env.studio_command_uri,
-    socket_port: process.env.socket_port || 8080,
 };
 
 // Use a mongo database if specified, otherwise store in a JSON file local to the app.
@@ -46,10 +45,15 @@ if (process.env.MONGO_URI) {
 // Create the Botkit controller, which controls all instances of the bot.
 var controller = Botkit.socketbot(bot_options);
 
-controller.startTicking();
-
 // Set up an Express-powered webserver to expose oauth and webhook endpoints
 var webserver = require(__dirname + '/components/express_webserver.js')(controller);
+
+// Open the web socket server
+controller.openSocketServer(controller.httpserver);
+
+// Start the bot brain in motion!!
+controller.startTicking();
+
 
 var normalizedPath = require("path").join(__dirname, "skills");
 require("fs").readdirSync(normalizedPath).forEach(function(file) {

@@ -2,6 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var querystring = require('querystring');
 var debug = require('debug')('botkit:webserver');
+var http = require('http');
 
 module.exports = function(controller) {
 
@@ -18,8 +19,9 @@ module.exports = function(controller) {
 
     webserver.use(express.static('public'));
 
+    var server = http.createServer(webserver);
 
-    webserver.listen(process.env.PORT || 3000, null, function() {
+    server.listen(process.env.PORT || 3000, null, function() {
 
         debug('Express webserver configured and listening at http://localhost:' + process.env.PORT || 3000);
 
@@ -32,6 +34,7 @@ module.exports = function(controller) {
     });
 
     controller.webserver = webserver;
+    controller.httpserver = server;
 
     return webserver;
 

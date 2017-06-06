@@ -11,7 +11,7 @@
     "botkit": "git+https://git@github.com/howdyai/botkit.git#dev/webchannel",
     "botkit-storage-mongo": "^1.0.6",
     "debug": "^2.3.3",
-    "express": "^4.14.0",
+    "express": "^4.15.3",
     "node-env-file": "^0.1.8",
     "querystring": "^0.2.0",
     "request": "^2.79.0",
