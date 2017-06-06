@@ -1,7 +1,5 @@
 module.exports = function(controller) {
 
-
-
   controller.hears('quick replies','message_received', function(bot, message) {
 
     bot.reply(message, {
@@ -22,9 +20,5 @@ module.exports = function(controller) {
 
 
       });
-
-
-
-
 
 }
