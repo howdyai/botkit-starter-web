@@ -4,7 +4,7 @@ This is an experimental and in-development version of Botkit. Both this starter 
 
 However, it works! And we welcome your input.
 
-See [this Github Issue] to track progress on this project.
+See [this Github Issue](https://github.com/howdyai/botkit/issues/871) to track progress on this project.
 
 [View sample app](https://botkit-web.glitch.me/)
 
