@@ -21,8 +21,8 @@ that created and maintains the open source Botkit library, [Howdy.](https://howd
 * [Botkit core](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit) - a complete programming system for building conversational software
 * [Botkit Studio API](https://github.com/howdyai/botkit/blob/master/docs/readme-studio.md#function-index) - additional APIs that extend Botkit with powerful tools and APIs
 * [Pre-configured Express.js webserver](https://expressjs.com/) including:
-    * A customizable "Install my Bot" homepage
-* Webhook endpoints for communicating with platforms
+   * A customizable "Install my Bot" homepage
+   * Webhook endpoints for communicating with platforms
 * Sample skill modules that demonstrate various features of Botkit
 * A sample web chat client
 
