@@ -49,7 +49,7 @@ var controller = Botkit.socketbot(bot_options);
 var webserver = require(__dirname + '/components/express_webserver.js')(controller);
 
 // Open the web socket server
-controller.openSocketServer(controller.httpserver);
+controller.openSocketServer(webserver);
 
 // Start the bot brain in motion!!
 controller.startTicking();
