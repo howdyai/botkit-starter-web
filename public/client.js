@@ -46,13 +46,21 @@
             // Create WebSocket connection.
             that.socket = new WebSocket(ws_url);
 
+            var connectEvent = 'hello';
+            if (getCookie('guid')) {
+                that.guid = getCookie('guid');
+                connectEvent = 'welcome_back';
+            } else {
+                that.guid = guid();
+                setCookie('guid', that.guid, 1);
+            }
 
             // Connection opened
             that.socket.addEventListener('open', function (event) {
                 console.log('CONNECTED TO SOCKET');
                 that.trigger('connected', event);
                 that.socket.send(JSON.stringify({
-                    type: 'hello',
+                    type: connectEvent,
                     user: that.guid,
                     channel: 'socket',
                 }));
@@ -97,13 +105,6 @@
             console.log('Booting up');
 
             var that = this;
-
-            if (getCookie('guid')) {
-                that.guid = getCookie('guid');
-            } else {
-                that.guid = guid();
-                setCookie('guid', that.guid, 1);
-            }
 
             that.message_window = document.getElementById("message_window");
 
