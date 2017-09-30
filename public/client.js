@@ -2,7 +2,7 @@
 
     var messenger = {
         config: {
-            ws_url: 'ws://localhost:3000', // CHANGE THIS TO YOUR HOST/PORT COMBO
+            ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host
         },
         options: {
             sound: true,
