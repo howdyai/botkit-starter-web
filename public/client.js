@@ -1,11 +1,12 @@
+    var converter = new showdown.Converter();
 
 
     var messenger = {
         config: {
-            ws_url: 'ws://localhost:3000', // CHANGE THIS TO YOUR HOST/PORT COMBO
+           ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host
         },
         options: {
-            sound: true,
+            sound: false,
         },
         guid: null,
         on: function(event, handler) {
@@ -26,6 +27,7 @@
             this.clearReplies();
 
             var el = document.createElement('div');
+            message.html = converter.makeHtml(message.text);
             el.innerHTML = this.message_template({message: message});
             this.message_list.appendChild(el);
 
@@ -158,23 +160,22 @@
                     that.next_line = document.createElement('div');
                     that.message_list.appendChild(that.next_line);
                 }
+                message.html = converter.makeHtml(message.text);
                 that.next_line.innerHTML = that.message_template({message: message});
                 delete(that.next_line);
-
-
 
             });
 
             that.on('received', function(message) {
 
                 that.clearReplies();
-                if (message.attachments && message.attachments.quick_replies) {
+                if (message.quick_replies) {
 
-                    for (var r = 0; r < message.attachments.quick_replies.length; r++) {
+                    for (var r = 0; r < message.quick_replies.length; r++) {
                         (function(reply) {
 
                             var el = document.createElement('a');
-                            el.innerHTML = reply.text;
+                            el.innerHTML = reply.title;
                             el.href = '#';
 
                             el.onclick = function() {
@@ -183,7 +184,7 @@
 
                             that.replies.appendChild(el);
 
-                        })(message.attachments.quick_replies[r]);
+                        })(message.quick_replies[r]);
 
                     }
                 }

@@ -4,18 +4,16 @@ module.exports = function(controller) {
 
     bot.reply(message, {
         text: 'Look, quick replies!',
-        attachments: {
-            quick_replies: [
-                {
-                    text: 'Hello',
-                    payload: 'hello'
-                },
-                {
-                    text: 'Test',
-                    payload: 'test'
-                },
-            ]
-        }
+        quick_replies: [
+            {
+                title: 'Hello',
+                payload: 'hello'
+            },
+            {
+                title: 'Test',
+                payload: 'test'
+            },
+        ]
       },function() {});
 
 
