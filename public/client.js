@@ -48,13 +48,21 @@
             // Create WebSocket connection.
             that.socket = new WebSocket(ws_url);
 
+            var connectEvent = 'hello';
+            if (getCookie('guid')) {
+                that.guid = getCookie('guid');
+                connectEvent = 'welcome_back';
+            } else {
+                that.guid = guid();
+                setCookie('guid', that.guid, 1);
+            }
 
             // Connection opened
             that.socket.addEventListener('open', function (event) {
                 console.log('CONNECTED TO SOCKET');
                 that.trigger('connected', event);
                 that.socket.send(JSON.stringify({
-                    type: 'hello',
+                    type: connectEvent,
                     user: that.guid,
                     channel: 'socket',
                 }));
@@ -80,9 +88,6 @@
 
                 if (message.typing) {
                     that.trigger('typing', message);
-                } else if (message.type == 'hello') {
-                    that.guid = message.user;
-                    setCookie('guid', message.user,1);
                 } else {
                     that.trigger('received', message);
                 }
@@ -102,10 +107,6 @@
             console.log('Booting up');
 
             var that = this;
-
-            if (getCookie('guid')) {
-                that.guid = getCookie('guid');
-            }
 
             that.message_window = document.getElementById("message_window");
 
@@ -224,4 +225,14 @@
             }
         }
         return "";
+    }
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                .toString(16)
+                .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+        s4() + '-' + s4() + s4() + s4();
     }
