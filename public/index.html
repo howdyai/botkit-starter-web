@@ -2,7 +2,6 @@
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
         <script src="https://cdn.rawgit.com/showdownjs/showdown/1.7.4/dist/showdown.min.js"></script>
-
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
@@ -10,11 +9,15 @@
             <div class="disconnected">
                 Disconnected... reconnecting!
             </div>
+            <div class="offline">
+                Offline! Reload to reconnect.
+            </div>
+
             <section>
                 <div id="message_list">
                     <div id="message_template">
                         <div class="message {{message.type}}">
-                            {{#if message.typing}}
+                            {{#if message.isTyping}}
                                 <div class="typing-indicator">
                                     ...
                                 </div>

@@ -31,6 +31,7 @@ var debug = require('debug')('botkit:main');
 var bot_options = {
     studio_token: process.env.studio_token,
     studio_command_uri: process.env.studio_command_uri,
+    replyWithTyping: false,
 };
 
 // Use a mongo database if specified, otherwise store in a JSON file local to the app.
@@ -72,6 +73,9 @@ if (process.env.studio_token) {
     controller.on('message_received', function(bot, message) {
         controller.studio.runTrigger(bot, message.text, message.user, message.channel, message).then(function(convo) {
             if (!convo) {
+              // web bot requires a response of some kind!
+              bot.reply(message,'OK');
+
                 // no trigger was matched
                 // If you want your bot to respond to every message,
                 // define a 'fallback' script in Botkit Studio
