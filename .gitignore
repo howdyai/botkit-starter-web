@@ -2,3 +2,4 @@
 .data
 node_modules
 components/routes/_*
+.sass-cache/

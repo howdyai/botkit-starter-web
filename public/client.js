@@ -99,7 +99,6 @@
       getHistory: function(guid) {
         that = this;
         if (that.guid) {
-          console.log('GETTING HISTORY...');
           that.request('/botkit/history',{user: that.guid}).then(function(history) {
             if (history.success) {
               that.trigger('history_loaded', history.history);
@@ -107,11 +106,8 @@
               that.trigger('history_error', new Error(history.error));
             }
           }).catch(function(err) {
-            console.log('HISTORY ERROR', err);
             that.trigger('history_error', err);
           });
-        } else {
-          console.log('NOT GETTING HISTORY');
         }
       },
       webhook: function(message) {
@@ -213,7 +209,6 @@
         this.input.focus();
       },
       renderMessage: function(message) {
-          console.log('RENDERING', message);
           if (!that.next_line) {
                 that.next_line = document.createElement('div');
                 that.message_list.appendChild(that.next_line);
@@ -315,14 +310,14 @@
         });
 
         that.on('history_loaded', function(history) {
-          console.log('History loaded!', history);
-          for (var m = 0; m < history.length; m++) {
-            that.renderMessage({
-              text: history[m].text,
-              type: history[m].type == 'message_received' ? 'outgoing' : 'incoming',
-            });
+          if (history) {
+            for (var m = 0; m < history.length; m++) {
+              that.renderMessage({
+                text: history[m].text,
+                type: history[m].type == 'message_received' ? 'outgoing' : 'incoming', // set appropriate CSS class
+              });
+            }
           }
-
         });
 
         // connect to the chat server!

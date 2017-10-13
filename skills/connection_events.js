@@ -10,7 +10,7 @@ module.exports = function(controller) {
   controller.on('welcome_back', function(bot, message) {
 
     // a known user has started a new, fresh session
-    bot.reply(message, 'Hello again. I still need to be configured.');
+//    bot.reply(message, 'Hello again. I still need to be configured.');
 
   });
 
