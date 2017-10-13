@@ -10,7 +10,7 @@
       },
       options: {
         sound: false,
-        use_sockets: true,
+        use_sockets: false,
       },
       reconnect_count: 0,
       guid: null,
@@ -113,7 +113,7 @@
       webhook: function(message) {
         that = this;
 
-        that.request('/botkit/receive', JSON.stringify(message)).then(function(message) {
+        that.request('/botkit/receive', message).then(function(message) {
           that.trigger(message.type, message);
         }).catch(function(err) {
           that.trigger('webhook_error', err);
