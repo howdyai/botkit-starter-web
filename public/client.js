@@ -4,13 +4,12 @@
     var messenger = {
       config: {
         ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host,
-        http_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host + '/botkit/receive',
         reconnect_timeout: 3000,
-        max_reconnect: 5,
+        max_reconnect: 5
       },
       options: {
         sound: false,
-        use_sockets: false,
+        use_sockets: true
       },
       reconnect_count: 0,
       guid: null,
