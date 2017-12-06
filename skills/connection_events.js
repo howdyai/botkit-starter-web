@@ -3,8 +3,8 @@ module.exports = function(controller) {
   controller.on('hello', function(bot, message) {
 
     // a new session with an unknown user has begun
-    bot.reply(message, 'Hello! I am a Botkit bot! Please configure me to do something useful.');
-
+    // bot.reply(message, 'Hello! I am a Botkit bot! Please configure me to do something useful.');
+    controller.studio.run(bot, 'tutorial_hello', message.user, message.channel, message);
   });
 
   controller.on('welcome_back', function(bot, message) {
@@ -12,6 +12,11 @@ module.exports = function(controller) {
     // a known user has started a new, fresh session
 //    bot.reply(message, 'Hello again. I still need to be configured.');
 
+        controller.studio.run(bot, 'tutorial_hello', message.user, message.channel, message).then(function(convo) {
+          convo.gotoThread('welcome_back');
+        })
+
+    
   });
 
   controller.on('reconnect', function(bot, message) {
