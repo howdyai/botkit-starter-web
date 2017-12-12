@@ -5,6 +5,7 @@ module.exports = function(webserver, controller) {
 webserver.get('/embed', function(req,res) {
 
     res.render('embed', {
+      layout: 'layouts/default',
       base_url: req.hostname,
       base_port: process.env.PORT
     });
