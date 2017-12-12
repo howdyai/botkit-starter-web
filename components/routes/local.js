@@ -6,8 +6,7 @@ webserver.get('/embed', function(req,res) {
 
     res.render('embed', {
       layout: 'layouts/default',
-      base_url: req.hostname,
-      base_port: process.env.PORT
+      base_url: req.hostname
     });
 
 });
