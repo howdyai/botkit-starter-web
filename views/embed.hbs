@@ -1,0 +1,24 @@
+<h1>Embed</h1>
+<h3>Copy the code below to embed a client in your website:</h3>
+<p>Extended Directions here: </p>
+<textarea id="copy_pasta_1">
+<div id="embedded_messenger">
+  <header id="message_header" onclick="messenger.toggle()">Chat</header>
+  <iframe src="http://{{base_url}}:{{base_port}}/chat.html"></iframe>
+</div>
+<script src="http://{{base_url}}:{{base_port}}/embed.js"></script>
+</textarea>
+</div>
+
+<div>
+  <button onclick="clipboard('copy_pasta_1')">Copy</button>
+</div>
+
+
+<script>
+function clipboard(element) {
+  var copyText = document.getElementById(element);
+  copyText.select();
+  document.execCommand("Copy");
+}
+</script>

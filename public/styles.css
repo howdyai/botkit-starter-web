@@ -7,6 +7,11 @@ html, body {
 * {
   box-sizing: border-box; }
 
+  #copy_pasta_1 {
+    width: 50em;
+    height: 7em;
+  }
+
 #message_window {
   background: #f0f0f0;
   border: 2px solid #CCC;

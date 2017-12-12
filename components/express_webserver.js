@@ -4,6 +4,8 @@ var querystring = require('querystring');
 var debug = require('debug')('botkit:webserver');
 var http = require('http');
 var fs = require('fs');
+var hbs = require('express-hbs');
+
 
 module.exports = function(controller) {
 
@@ -11,6 +13,11 @@ module.exports = function(controller) {
     var webserver = express();
     webserver.use(bodyParser.json());
     webserver.use(bodyParser.urlencoded({ extended: true }));
+
+    // set up handlebars ready for tabs
+    webserver.engine('hbs', hbs.express4({partialsDir: __dirname + '/../views/partials'}));
+    webserver.set('view engine', 'hbs');
+    webserver.set('views', __dirname + '/../views/');
 
     // import express middlewares that are present in /components/express_middleware
     var normalizedPathToMiddleware = require('path').join(__dirname, 'express_middleware');
