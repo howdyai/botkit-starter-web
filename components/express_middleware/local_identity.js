@@ -4,7 +4,7 @@ var request = require('request');
 module.exports = function(webserver, controller){
   // check static.local for identity
   // console.log('webserver.locals: ', webserver.locals);
-  if(!webserver.static){
+  if(!webserver.local || !webserver.local.local_identity){
     // if not call whoami and set it
     request({
         method: 'get',
