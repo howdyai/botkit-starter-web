@@ -287,6 +287,17 @@
         });
 
         that.on('message', function(message) {
+          if (message.open_link) {
+            // todo: this gets blocked by the popup blocker....
+            window.open(message.open_link);
+          }
+
+          if (message.goto_link) {
+            window.location = message.goto_link;
+          }
+        });
+
+        that.on('message', function(message) {
           that.clearReplies();
           if (message.quick_replies) {
 

@@ -86,6 +86,11 @@ html,body {
       width: auto;
       display: inline-block;
       max-width: 75%;
+
+      img {
+        max-width: 100%;
+      }
+
   }
 
   .message p {

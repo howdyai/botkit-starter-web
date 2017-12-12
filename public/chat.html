@@ -25,6 +25,13 @@
                                 </div>
                             {{/if}}
                             {{{message.html}}}
+                            {{#message.files}}
+                              {{#if image}}
+                                <img src="{{{url}}}" alt="{{{url}}}" />
+                              {{else}}
+                                <a href="{{{url}}}">{{{url}}}</a>
+                              {{/if}}
+                            {{/message.files}}
                         </div>
                     </div>
                 </div>
