@@ -26,6 +26,12 @@
                                 </div>
                             {{/if}}
                             {{{message.html}}}
+
+
+                            {{#if message.open_link}}
+                              <a href="{{{message.open_link}}}" target="_blank" class="button_message">{{#if message.link_title}}{{message.link_title}}{{else}}{{message.open_link}}{{/if}}</a>
+                            {{/if}}
+
                             {{#message.files}}
                               {{#if image}}
                                 <img src="{{{url}}}" alt="{{{url}}}" />

@@ -64,6 +64,20 @@ html, body {
     width: auto;
     display: inline-block;
     max-width: 75%; }
+    #message_window .message img {
+      max-width: 100%; }
+  #message_window .button_message {
+    margin: 1rem 0;
+    border-radius: 4px;
+    border-color: orange;
+    border-style: solid;
+    color: orange;
+    border-width: 1px;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.25);
+    display: block; }
   #message_window .message p {
     margin-top: 0;
     margin-bottom: 0.5rem; }

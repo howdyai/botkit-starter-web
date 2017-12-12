@@ -1,3 +1,6 @@
+$action_color: orange;
+
+
 html,body {
     font-family: 'helvetica', sans-serif;
     margin:0;
@@ -91,6 +94,21 @@ html,body {
         max-width: 100%;
       }
 
+  }
+
+
+  .button_message {
+    margin: 1rem 0;
+    border-radius: 4px;
+    border-color: $action_color;
+    border-style: solid;
+    color: $action_color;
+    border-width: 1px;
+    padding: 0.25rem 1rem;
+    text-decoration: none;
+    text-align: center;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+    display: block;
   }
 
   .message p {

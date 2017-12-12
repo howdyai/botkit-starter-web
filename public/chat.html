@@ -25,6 +25,11 @@
                                 </div>
                             {{/if}}
                             {{{message.html}}}
+
+                            {{#if message.open_link}}
+                              <a href="{{{message.open_link}}}" target="_blank" class="button_message">{{#if message.link_title}}{{message.link_title}}{{else}}{{message.open_link}}{{/if}}</a>
+                            {{/if}}
+
                             {{#message.files}}
                               {{#if image}}
                                 <img src="{{{url}}}" alt="{{{url}}}" />
@@ -45,17 +50,6 @@
                 </form>
             </footer>
         </div>
-
-
-        <div id="welcome">
-            <h1>I'm a bot!</h1>
-
-            <p><a href="/chat.html">Make me full screen</a></p>
-            <p><a href="/embedded.html">Embed me in a web site</a></p>
-
-        </div>
-
-
         </div>
         <script src="client.js"></script>
     </body>
