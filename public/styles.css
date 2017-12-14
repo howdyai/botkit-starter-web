@@ -1,17 +1,104 @@
-html, body {
-  font-family: 'helvetica', sans-serif;
-  margin: 0;
-  padding: 0;
-  background: #666; }
-
+/* shared botkit ui styles */
 * {
   box-sizing: border-box; }
 
-  #copy_pasta_1 {
-    width: 50em;
-    height: 7em;
-  }
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-size: 18px;
+  background-color: #FFF;
+  font-family: 'helvetica', sans-serif; }
 
+.wrapper {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto; }
+  .wrapper:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+.box {
+  border: 2px solid #CCC;
+  padding: 1rem calc(1rem - 2px);
+  margin-bottom: 1rem; }
+  .box:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .box h1,
+  .box h2,
+  .box h3 {
+    margin-top: 0; }
+
+footer {
+  text-align: center; }
+
+.hero {
+  text-align: center;
+  padding: 2rem; }
+  .hero h1 {
+    font-size: 4rem;
+    margin: 0; }
+
+a {
+  color: #a795ef; }
+
+.copyurl {
+  width: 100%;
+  font-size: 1.25rem; }
+
+div.input label {
+  font-weight: bold;
+  font-size: smaller; }
+
+.addon {
+  display: flex;
+  border: 1px solid #999;
+  border-radius: 6px;
+  padding: 5px;
+  background: #F0F0F0; }
+  .addon input,
+  .addon textarea {
+    flex-grow: 1;
+    border: 0;
+    background: transparent; }
+  .addon button {
+    flex-grow: 0;
+    background: transparent;
+    border: 1px solid #999;
+    border-radius: 6px;
+    font-weight: bold; }
+    .addon button.textarea {
+      align-self: flex-start;
+      padding: 0.5rem; }
+    .addon button:hover {
+      background: #FFF;
+      color: #a795ef; }
+
+div.hr {
+  border: 1px dashed #ccc;
+  width: 10%;
+  margin: 4rem auto;
+  height: 1px; }
+
+a.button {
+  border: 2px solid #a795ef;
+  font-weight: bold;
+  margin: 0;
+  border-radius: 3px;
+  display: inline-block;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
+  background-color: #FFF;
+  transition: box-shadow 0.1s linear; }
+  a.button:hover {
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); }
+
+/* chat client */
 #message_window {
   background: #f0f0f0;
   border: 2px solid #CCC;
@@ -85,5 +172,28 @@ html, body {
       border: 1px solid blue;
       border-radius: 16px;
       padding: 0.5rem 1rem; }
+
+/* special styles for homepage */
+#home {
+  position: relative; }
+  #home:after {
+    content: "";
+    display: table;
+    clear: both; }
+
+#homepage_bot {
+  width: 400px;
+  height: 450px;
+  float: left;
+  border: 5px solid #333;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); }
+  #homepage_bot iframe {
+    border: 0;
+    height: 100%;
+    width: 100%; }
+
+#welcome {
+  margin-left: 440px; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -37,6 +37,15 @@ module.exports = function(controller) {
 
     });
 
+    // TODO: Does this call to identify really belong here?
+    if (controller.config.studio_token) {
+        controller.studio.identify().then(function(identity) {
+            console.log('BOTKIT STUDIO IDENTITY', identity);
+            controller.studio_identity = identity;
+            webserver.locals.bot = identity;
+        });
+    }
+
     // import all the pre-defined routes that are present in /components/routes
     var normalizedPathToRoutes = require('path').join(__dirname, 'routes');
     if (fs.existsSync(normalizedPathToRoutes)) {
