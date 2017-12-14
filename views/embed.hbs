@@ -1,0 +1,29 @@
+<div class="box">
+
+    <h1>Embed Me "{{bot.name}}"</h1>
+    <p>
+        Copy the code below to embed this bot in a different website.
+    </p>
+
+<div class="addon">
+    <textarea id="copy_pasta_1" rows="6" class="copyurl">
+<div id="embedded_messenger">
+    <header id="message_header" onclick="messenger.toggle()">Chat</header>
+    <iframe src="//{{base_url}}/chat.html"></iframe>
+</div>
+<script src="//{{base_url}}/embed.js"></script>
+<link rel="stylesheet" href="//{{base_url}}/embed.css" />
+    </textarea>
+    <button class="textarea" onclick="clipboard('copy_pasta_1')">Copy</button>
+</div>
+
+</div>
+
+
+
+<div id="embedded_messenger">
+    <header id="message_header" onclick="messenger.toggle()">Chat</header>
+    <iframe src="/chat.html"></iframe>
+</div>
+<script src="/embed.js"></script>
+<link rel="stylesheet" href="/embed.css" />

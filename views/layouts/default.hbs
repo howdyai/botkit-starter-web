@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+    {{> head}}
+    <body>
+        {{>header}}
+        <div class="wrapper">
+          {{{body}}}
+        </div>
+        {{> footer}}
+    </body>
+</html>

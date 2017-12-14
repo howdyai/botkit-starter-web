@@ -1,5 +1,5 @@
 var messenger = {
-  active: false,
+  active: true,
   activate: function() {
     this.active = true;
     this.messenger.className = 'active';

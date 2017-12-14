@@ -1,0 +1,124 @@
+$action_color: orange;
+
+#message_window {
+    background: #f0f0f0;
+    border: 2px solid #CCC;
+    /*height: 500px;
+    width: 320px;*/
+    height: 100%;
+    width: 100%;
+    /*margin: 2rem auto;*/
+    display: flex;
+    flex-direction: column;
+
+    .disconnected {
+        background: #FFFFCC;
+        padding: 0.25rem;
+    }
+    &.connected .disconnected {
+        display: none;
+    }
+    .offline {
+        display: none;
+    }
+    &.offline {
+
+      .disconnected {
+        display: none;
+      }
+      .offline {
+        background: #FF0000;
+        color: #FFF;
+        padding: 0.25rem;
+        display: block;
+      }
+    }
+
+   section {
+      flex-grow:  1;
+      flex-direction: column-reverse;
+      display: flex;
+      overflow-y: auto;
+
+     div div {
+        margin: 0.25rem;
+        clear: both;
+    }
+  }
+
+  footer {
+      border-top: 1px solid #CCC;
+      input[type="text"] {
+          flex-grow: 1;
+          font-size: 1.25rem;
+      }
+      button {
+         width: 50px;
+         background: none;
+         border: 0;
+         cursor: pointer;
+         color: blue;
+         font-weight: bold;
+     }
+  }
+
+  form {
+      display: flex;
+      margin: 0;
+      padding: 0.25rem;
+  }
+
+  #message_template {
+      display: none;
+  }
+
+  .message {
+      padding: 1rem;
+      background: #FFF;
+      border-radius: 5px;
+      width: auto;
+      display: inline-block;
+      max-width: 75%;
+  }
+
+    .button_message {
+      margin: 1rem 0;
+      border-radius: 4px;
+      border-color: $action_color;
+      border-style: solid;
+      color: $action_color;
+      border-width: 1px;
+      padding: 0.25rem 1rem;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 1px 1px 2px rgba(0,0,0,0.25);
+      display: block;
+    }
+
+
+  .message p {
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+  }
+
+  .message p:last-child {
+      margin-bottom: 0;
+  }
+
+  .message.outgoing {
+      float: right;
+  }
+
+  #message_replies {
+      text-align: center;
+
+      a {
+         text-decoration: none;
+         display: inline-block;
+         margin: 0.5rem;
+         border: 1px solid blue;
+         border-radius: 16px;
+         padding: 0.5rem 1rem;
+     }
+   }
+}
