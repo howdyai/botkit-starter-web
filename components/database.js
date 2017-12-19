@@ -28,7 +28,10 @@ module.exports = function(config) {
       index: true,
     },
     name: String,
-    attributes: {},
+    attributes: {
+      type: Object,
+      default: {},
+    },
   })
 
   var users = mongoose.model('user', userSchema);
@@ -42,7 +45,7 @@ module.exports = function(config) {
     message: {},
     date: {
       type: Date,
-      default: new Date,
+      default: Date.now,
     }
   })
 
@@ -66,7 +69,7 @@ module.exports = function(config) {
     },
     users: {
       get: function(id, cb) {
-        return teams.findOne({
+        return users.findOne({
           id: id
         }, cb);
 
@@ -79,7 +82,7 @@ module.exports = function(config) {
             if (cb) return cb(err);
           }
           if (!user) {
-            user = new teams(data);
+            user = new users(data);
           }
 
           // copy values
@@ -96,14 +99,48 @@ module.exports = function(config) {
       },
       find: function(data, cb) {
         return users.find(data, cb);
+      },
+      remember: function(userId, fields) {
+        return new Promise(function(resolve, reject) {
+          users.findOne({id: userId}, function(err, user) {
+            if (!user) {
+              user = new users({id: userId, attributes: {}});
+            }
+
+            for (var field in fields) {
+              user.attributes[field] = fields[field];
+            }
+
+            user.markModified('attributes');
+
+            user.save(function(err) {
+
+              if (err) {
+                return reject(err);
+              }
+              resolve(user);
+            });
+          });
+        });
       }
     },
     history: {
       addToHistory: function(message, user) {
-
+        return new Promise(function(resolve, reject) {
+          var hist = new history({userId: user, message: message});
+          hist.save(function(err) {
+            if (err) { return reject(err) }
+            resolve(hist);
+          });
+        });
       },
       getHistoryForUser: function(user, limit) {
-
+        return new Promise(function(resolve, reject) {
+          history.find({userId: user}).sort({date: -1}).limit(limit).exec(function(err, history) {
+            if (err) {  return reject(err) }
+            resolve(history.reverse());
+          });
+        });
       }
     },
     channels: {
