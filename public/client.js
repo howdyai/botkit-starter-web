@@ -98,7 +98,9 @@
       getHistory: function(guid) {
         that = this;
         if (that.guid) {
-          that.request('/botkit/history',{user: that.guid}).then(function(history) {
+          that.request('/botkit/history', {
+            user: that.guid
+          }).then(function(history) {
             if (history.success) {
               that.trigger('history_loaded', history.history);
             } else {
@@ -117,6 +119,17 @@
         }).catch(function(err) {
           that.trigger('webhook_error', err);
         });
+
+      },
+      connect: function() {
+
+        var that = this;
+        // connect to the chat server!
+        if (that.options.use_sockets) {
+          that.connectWebsocket(that.config.ws_url);
+        } else {
+          that.connectWebhook();
+        }
 
       },
       connectWebhook: function() {
@@ -140,7 +153,7 @@
         });
 
       },
-      connect: function(ws_url) {
+      connectWebsocket: function(ws_url) {
         var that = this;
         // Create WebSocket connection.
         that.socket = new WebSocket(ws_url);
@@ -177,8 +190,8 @@
           that.trigger('disconnected', event);
           if (that.reconnect_count < that.config.max_reconnect) {
             setTimeout(function() {
-              console.log('RECONNECTING ATTEMPT ',++that.reconnect_count);
-              that.connect(that.config.ws_url);
+              console.log('RECONNECTING ATTEMPT ', ++that.reconnect_count);
+              that.connectWebsocket(that.config.ws_url);
             }, that.config.reconnect_timeout);
           } else {
             that.message_window.className = 'offline';
@@ -208,24 +221,72 @@
         this.input.focus();
       },
       renderMessage: function(message) {
-          if (!that.next_line) {
-                that.next_line = document.createElement('div');
-                that.message_list.appendChild(that.next_line);
-          }
-          if (message.text) {
-            message.html = converter.makeHtml(message.text);
-          }
+        if (!that.next_line) {
+          that.next_line = document.createElement('div');
+          that.message_list.appendChild(that.next_line);
+        }
+        if (message.text) {
+          message.html = converter.makeHtml(message.text);
+        }
 
-          that.next_line.innerHTML = that.message_template({message: message});
-          if (!message.isTyping) {
-            delete(that.next_line);
-          }
+        that.next_line.innerHTML = that.message_template({
+          message: message
+        });
+        if (!message.isTyping) {
+          delete(that.next_line);
+        }
+      },
+
+      triggerScript: function(script, thread) {
+        this.socket.send(JSON.stringify({
+          type: 'trigger',
+          user: this.guid,
+          channel: 'socket',
+          script: script,
+          thread: thread
+        }));
+      },
+      identifyUser: function(user) {
+        this.socket.send(JSON.stringify({
+          type: 'identify',
+          user: this.guid,
+          channel: 'socket',
+          fields: user,
+        }));
+      },
+      receiveCommand: function(event) {
+        switch (event.data.name) {
+          case 'trigger':
+            // tell Botkit to trigger a specific script/thread
+            console.log('TRIGGER', event.data.script, event.data.thread);
+            messenger.triggerScript(event.data.script, event.data.thread);
+            break;
+          case 'identify':
+            // link this account info to this user
+            console.log('IDENTIFY', event.data.user);
+            messenger.identifyUser(event.data.user);
+            break;
+          case 'connect':
+            // link this account info to this user
+            messenger.connect();
+            break;
+          default:
+            console.log('UNKNOWN COMMAND', event.data);
+        }
+      },
+      sendEvent: function(event) {
+
+        if (this.parent_window) {
+          this.parent_window.postMessage(event, '*');
+        }
+
       },
       boot: function() {
 
         console.log('Booting up');
 
         var that = this;
+
 
         that.message_window = document.getElementById("message_window");
 
@@ -240,11 +301,12 @@
 
         that.focus();
 
-
-
         that.on('connected', function() {
           that.message_window.className = 'connected';
           that.input.disabled = false;
+          that.sendEvent({
+            name: 'connected'
+          });
         })
 
         that.on('disconnected', function() {
@@ -255,14 +317,14 @@
         that.on('webhook_error', function(err) {
 
           alert('Error sending message!');
-          console.error('Webhook Error',err);
+          console.error('Webhook Error', err);
 
         });
 
         that.on('typing', function() {
           that.clearReplies();
           that.renderMessage({
-              isTyping: true
+            isTyping: true
           });
         });
 
@@ -288,7 +350,6 @@
 
         that.on('message', function(message) {
           if (message.goto_link) {
-            // console.log('Bot requested we navigate to ', message.goto_link);
             window.location = message.goto_link;
           }
         });
@@ -327,12 +388,26 @@
           }
         });
 
-        // connect to the chat server!
-        if (that.options.use_sockets) {
-          that.connect(that.config.ws_url);
+
+        if (window.self !== window.top) {
+          // this is embedded in an iframe.
+          // send a message to the master frame to tell it that the chat client is ready
+          // do NOT automatically connect... rather wait for the connect command.
+          that.parent_window = window.parent;
+          window.addEventListener("message", that.receiveCommand, false);
+          that.sendEvent({
+            type: 'event',
+            name: 'booted'
+          });
+          console.log('Messenger booted in embedded mode');
+
         } else {
-          that.connectWebhook();
+
+          console.log('Messenger booted in stand-alone mode');
+          // this is a stand-alone client. connect immediately.
+          that.connect();
         }
+
 
         return that;
       }
@@ -342,7 +417,6 @@
     (function() {
       // your page initialization code here
       // the DOM will be available here
-      console.log('READY');
       messenger.boot();
     })();
 
