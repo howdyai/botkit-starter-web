@@ -12,6 +12,10 @@
     <iframe  id="botkit_client" src="//{{base_url}}/chat.html"></iframe>
 </div>
 <script src="//{{base_url}}/embed.js"></script>
+<script>
+var options = {}; // see __ for options
+Botkit.boot(options);
+</script>
 <link rel="stylesheet" href="//{{base_url}}/embed.css" />
     </textarea>
     <button class="textarea" onclick="clipboard('copy_pasta_1')">Copy</button>
@@ -27,3 +31,6 @@
 </div>
 <script src="/embed.js"></script>
 <link rel="stylesheet" href="/embed.css" />
+<script>
+Botkit.boot();
+</script>

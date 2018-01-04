@@ -121,9 +121,20 @@
         });
 
       },
-      connect: function() {
+      connect: function(user) {
+
 
         var that = this;
+
+        if (user && user.id) {
+          setCookie('guid', user.id, 1);
+          console.log('CONNECT WITH USER', user);
+        }
+        // TODO: how should we send the user profile info?
+        // TODO: and then have it stored/synced with Metrics
+        // TODO: Also, have to figure out how to transition from one GUID to another if user links after chat starts?
+
+
         // connect to the chat server!
         if (that.options.use_sockets) {
           that.connectWebsocket(that.config.ws_url);
@@ -268,7 +279,7 @@
             break;
           case 'connect':
             // link this account info to this user
-            messenger.connect();
+            messenger.connect(event.data.user);
             break;
           default:
             console.log('UNKNOWN COMMAND', event.data);
