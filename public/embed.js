@@ -21,13 +21,13 @@ var Botkit = {
     }
     return "";
   },
-  active: true,
+  active: false,
   activate: function() {
     this.active = true;
     if (this.container) {
       this.container.className = 'active';
     }
-    this.tellClient('activate');
+    // this.tellClient('activate');
     this.setCookie('messenger_active', this.active);
   },
   deactivate: function() {
@@ -35,11 +35,10 @@ var Botkit = {
     if (this.container) {
       this.container.className = '';
     }
-    this.tellClient('deactivate');
+    // this.tellClient('deactivate');
     this.setCookie('messenger_active', this.active);
   },
   toggle: function() {
-    console.log('TOGGLE');
     if (this.active) {
       this.deactivate();
     } else {
@@ -66,9 +65,7 @@ var Botkit = {
         console.log('Embedded Botkit: Ready!');
         break;
       case 'connected':
-
-        console.log('100% CONNECTED AND READY TO GO');
-
+        // console.log('100% CONNECTED AND READY TO GO');
         break;
     }
   },
