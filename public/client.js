@@ -1,6 +1,5 @@
     var converter = new showdown.Converter();
 
-
     var messenger = {
       config: {
         ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host,
@@ -13,6 +12,7 @@
       },
       reconnect_count: 0,
       guid: null,
+      current_user: null,
       on: function(event, handler) {
         this.message_window.addEventListener(event, function(evt) {
           handler(evt.detail);
@@ -63,13 +63,6 @@
           text: text
         };
 
-
-        // var el = document.createElement('div');
-        // message.html = converter.makeHtml(message.text);
-        // el.innerHTML = this.message_template({
-        //   message: message
-        // });
-        // this.message_list.appendChild(el);
         this.clearReplies();
         that.renderMessage(message);
 
@@ -123,13 +116,17 @@
       },
       connect: function(user) {
 
-
         var that = this;
 
         if (user && user.id) {
           setCookie('guid', user.id, 1);
+
+          user.timezone_offset = new Date().getTimezoneOffset();
+          that.current_user = user;
           console.log('CONNECT WITH USER', user);
         }
+
+
         // TODO: how should we send the user profile info?
         // TODO: and then have it stored/synced with Metrics
         // TODO: Also, have to figure out how to transition from one GUID to another if user links after chat starts?
@@ -189,6 +186,7 @@
             type: connectEvent,
             user: that.guid,
             channel: 'socket',
+            user_profile: that.current_user ? that.current_user : null,
           }));
         });
 
@@ -247,7 +245,6 @@
           delete(that.next_line);
         }
       },
-
       triggerScript: function(script, thread) {
         this.socket.send(JSON.stringify({
           type: 'trigger',
@@ -258,11 +255,19 @@
         }));
       },
       identifyUser: function(user) {
+
+        user.timezone_offset = new Date().getTimezoneOffset();
+
+        this.guid = user.id;
+        setCookie('guid', user.id, 1);
+
+        this.current_user = user;
+
         this.socket.send(JSON.stringify({
           type: 'identify',
           user: this.guid,
           channel: 'socket',
-          fields: user,
+          user_profile: user,
         }));
       },
       receiveCommand: function(event) {

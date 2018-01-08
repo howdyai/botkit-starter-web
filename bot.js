@@ -51,8 +51,17 @@ var controller = Botkit.socketbot(bot_options);
 // Set up an Express-powered webserver to expose oauth and webhook endpoints
 var webserver = require(__dirname + '/components/express_webserver.js')(controller);
 
+
+
 // Load in some helpers that make running Botkit on Glitch.com better
 require(__dirname + '/components/plugin_glitch.js')(controller);
+
+// Load in a plugin that defines the bot's identity
+require(__dirname + '/components/plugin_identity.js')(controller);
+
+// enable advanced botkit studio metrics
+// and capture the metrics API to use with the identity plugin!
+controller.metrics = require('botkit-studio-metrics')(controller);
 
 // Open the web socket server
 controller.openSocketServer(controller.httpserver);

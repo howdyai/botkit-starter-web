@@ -1,9 +1,10 @@
 module.exports = function(controller) {
 
+
     controller.on('hello', function(bot, message) {
 
-        // a new session with an unknown user has begun
-        controller.studio.run(bot, 'tutorial_hello', message.user, message.channel, message);
+          // a new session with an unknown user has begun
+          controller.studio.run(bot, 'tutorial_hello', message.user, message.channel, message);
     });
 
     controller.on('welcome_back', function(bot, message) {
@@ -13,6 +14,13 @@ module.exports = function(controller) {
             convo.gotoThread('welcome_back');
         })
     });
+
+    controller.on('identify', function(bot, message) {
+
+      console.log('IDENTIFY USER', message.user, message.fields);
+
+    });
+
 
     controller.studio.before('tutorial_hello', function(convo, next) {
         convo.setVar('bot', controller.studio_identity);

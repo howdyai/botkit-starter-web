@@ -10,6 +10,7 @@
     "body-parser": "^1.15.2",
     "botkit": "https://github.com/howdyai/botkit#dev/webchannel",
     "botkit-storage-mongo": "^1.0.6",
+    "botkit-studio-metrics": "0.0.4",
     "debug": "^2.3.3",
     "express": "^4.15.3",
     "express-hbs": "^1.0.4",
