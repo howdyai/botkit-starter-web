@@ -15,13 +15,6 @@ module.exports = function(controller) {
         })
     });
 
-    controller.on('identify', function(bot, message) {
-
-      console.log('IDENTIFY USER', message.user, message.fields);
-
-    });
-
-
     controller.studio.before('tutorial_hello', function(convo, next) {
         convo.setVar('bot', controller.studio_identity);
         next();

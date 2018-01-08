@@ -11,14 +11,11 @@ module.exports = function(config) {
 
   mongoose.Promise = global.Promise;
 
-  // mongoose.set('debug', true);
-
-
   var db = mongoose.connection;
   db.on('error', console.error.bind(console, 'connection error:'));
   db.once('open', function() {
     // we're connected!
-    debug('CONNECTED TO DB!!!');
+    debug('CONNECTED TO DB!');
   });
 
 
@@ -51,10 +48,7 @@ module.exports = function(config) {
 
   var history = mongoose.model('history', historySchema);
 
-
-
   return {
-    type: 'mongo+history',
     teams: {
       get: function(id, cb) {
       },
@@ -100,29 +94,6 @@ module.exports = function(config) {
       find: function(data, cb) {
         return users.find(data, cb);
       },
-      remember: function(userId, fields) {
-        return new Promise(function(resolve, reject) {
-          users.findOne({id: userId}, function(err, user) {
-            if (!user) {
-              user = new users({id: userId, attributes: {}});
-            }
-
-            for (var field in fields) {
-              user.attributes[field] = fields[field];
-            }
-
-            user.markModified('attributes');
-
-            user.save(function(err) {
-
-              if (err) {
-                return reject(err);
-              }
-              resolve(user);
-            });
-          });
-        });
-      }
     },
     history: {
       addToHistory: function(message, user) {
