@@ -55,9 +55,10 @@ The chat client is built with HTML, CSS and vanilla Javascript.
 Developers can customize the look and feel of the client by modifying the included markup and CSS.
 New chat features such as custom cards or actions can be added with just a little bit of code.
 
-* How to customize the look and feel of your web chat
-* How to extend the events and UI of your web chat
-* How to specify user profile info to chat
+* [How to embed a bot in your website](docs/botkit_web_client.md)
+* [How to customize the look and feel of your web chat](docs/botkit_web_client.md)
+* [How to extend the events and UI of your web chat](docs/botkit_web_client.md)
+* [How to specify user profile info to chat](docs/botkit_web_client.md)
 
 ### The full power of Botkit, in your app or site
 
