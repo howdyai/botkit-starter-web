@@ -1,22 +1,80 @@
-# Botkit for the Web
+# Botkit Anywhere
 
 Embed a bot in any web page or app with Botkit for the Web.
 
+Botkit Anywhere is a self-contained chat server, API and messaging client that has been built on top of the industry leading Botkit development stack.
+
+## Get Started
+
+Botkit Anywhere is built to work hand-in-hand with Botkit Studio, a
+web-based bot building, content management and analytics platform. To
+set up your own bot, sign up for a free developer account and you'll
+be guided through the process of configuring and deploying an instance
+of this starter kit!
+
+**[![Sign up for Botkit Studio](https://raw.githubusercontent.com/howdyai/botkit/master/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
+
 ## Features
 
-web chat client
+### The full power of Botkit, in your app or site
 
-self-contained botkit chat server
 
-analytics and cms
+
+### Customizable web-based chat client
+
+Botkit Anywhere includes an easy to customize chat client that can be used as a full-screen web app, built into the structure
+of an existing page, or embedded in an entire site with an iframe.
+
+The built-in client uses websocket connections to establish a real time connection
+to your Botkit app in order to instantly send and receive messages. It supports bot-friendly
+features like quick replies and image attachments. It gracefully handles failed connections
+and reconnects.
+
+The chat client is built with HTML, CSS and vanilla Javascript.
+Developers can customize the look and feel of the client by modifying the included markup and CSS.
+New chat features such as custom cards or actions can be added with just a little bit of code.
+
+## Chat Server and API
+
+Botkit Anywhere's built-in chat server can handle thousands of simultaneous one-on-one conversations with your users.
+The chat server provides both a websocket and a webhook based interface for sending and receiving messages.
+It is a great solution for including one-on-one chat in a web site or native app.
+
+Additionally, Botkit Anywhere includes APIs for retrieving a user's conversation history,
+and account-linking features that enable you to identify existing users to your bot.
+
+## Dialog Authoring and Content Management
+
+Botkit Studio provides dialog authoring and content management tools that enable
+developers, designers, copywriters and other botmakers to build features for bots
+without writing any code. The visual authoring environment in Botkit Studio can be used to
+create branching conversations, Q&A systems, and transactional conversations.
+
+Conversational content in Botkit Studio can be updated and expanded at any time,
+without requiring changes to the bot's code. With help from Botkit's reports
+and operational tools, developers can ensure that their bot is provided the
+right answers to all the important questions.
+
+Then, with just a bit of code, your bot can access and use information from databases,
+APIs and third party services as part of the conversation. The business logic
+of your bot stays clean and easy to maintain by separating the form from the functionality.
+
+## Analytics
+
+Out of the box, Botkit Anywhere works with Botkit Studio's analytics capabilities,
+which includes custom metrics, daily, weekly and monthly stats, user retention reports,
+a queryable customer database, and full transcripts of every conversation your bot conducts.
 
 
 ## TOC
 
+
 How to configure, deploy and host your bot
+  * How to specify user profile info to chat
+  * How to set up DB for message history etc
 
 How to customize the look and feel of your web chat
 
-How to extend the features of your web chat
+How to extend the events and UI of your web chat
 
 How to add additional features to your bot
