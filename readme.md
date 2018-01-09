@@ -18,6 +18,15 @@ of this starter kit!
 
 ### The full power of Botkit, in your app or site
 
+Botkit's SDK powers tens-of-thousands of bots, and supports development of chatbots on
+all major messaging platforms. Members of the Botkit developer community have created dozens of useful plugins,
+including plugins that add compatibility with top A.I. technologies like IBM Watson, DialogFlow, and RASA.
+
+New code-driven features can be added to this starter kit by creating "skills" which are
+Javascript modules containing a set of specialized pattern matchers, handler functions and middlewares.
+
+* [How to build Botkit Skill Modules](docs/how_to_build_skills.md)
+* [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
 
 
 ### Customizable web-based chat client
