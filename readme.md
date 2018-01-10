@@ -62,6 +62,7 @@ The chat client is built with HTML, CSS and vanilla Javascript.
 Developers can customize the look and feel of the client by modifying the included markup and CSS.
 New chat features such as custom cards or actions can be added with just a little bit of code.
 
+* **[Web Chat Client Overview](docs/botkit_web_client.md)**
 * [How to embed a bot in your website](docs/botkit_web_client.md#embed-botkit-in-a-website-with-iframes)
 * [How to customize the look and feel of your web chat](docs/botkit_web_client.md#customize-the-look-and-feel-of-the-chat-interface)
 * [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
@@ -88,6 +89,7 @@ It is a great solution for including one-on-one chat in a web site or native app
 Additionally, Botkit Anywhere includes APIs for retrieving a user's conversation history,
 and account-linking features that enable you to identify existing users to your bot.
 
-  * [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
-  * [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
-  * [How to enable message history API](docs/botkit_chat_server.md#enabling-message-history)
+* **[Chat Server Overview](docs/botkit_chat_server.md)**
+* [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
+* [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
+* [How to enable message history API](docs/botkit_chat_server.md#enabling-message-history)
