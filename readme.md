@@ -14,14 +14,14 @@ of this starter kit!
 
 **[![Sign up for Botkit Studio](https://raw.githubusercontent.com/howdyai/botkit/master/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
 
-## Features
+## Add Features with Botkit Studio
 
-## Dialog Authoring and Content Management
+Bots can be thought of as a series of pre-defined conversations, navigated by users who exchange messages with the bot application. The bot is responsible for replying with the appropriate message, and taking whatever automated actions are necessary to satisfy the user.
 
-Botkit Studio provides dialog authoring and content management tools that enable
-developers, designers, copywriters and other botmakers to build features for bots
-without writing any code. The visual authoring environment in Botkit Studio can be used to
-create branching conversations, Q&A systems, and transactional conversations.
+Each "feature" of your bot will consist of one or more conversations, along with some code to power the related actions.
+
+Botkit Studio enables developers, designers, copywriters and other botmakers to build features for bots
+without writing any code by providing dialog authoring and content management tools. The visual authoring environment in Botkit Studio can be used to create branching conversations, Q&A systems, complex transactions, or any other type of conversational content.
 
 Conversational content in Botkit Studio can be updated and expanded at any time,
 without requiring changes to the bot's code. With help from Botkit's reports
@@ -30,7 +30,7 @@ right answers to all the important questions.
 
 Then, with just a bit of code, your bot can access and use information from databases,
 APIs and third party services as part of the conversation. The business logic
-of your bot stays clean and easy to maintain by separating the form from the functionality.
+of your bot stays clean and easy to maintain by separating the form from the functionality. Botkit Studio will even generate this boilerplate code for you!
 
 * [Botkit Studio Knowledge Base](http://botkit.groovehq.com/help_center)
 * [Botkit Studio API documentation](https://github.com/howdyai/botkit/blob/master/docs/readme-studio.md#why-use-botkit-studio)
