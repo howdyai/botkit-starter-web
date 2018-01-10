@@ -8,7 +8,7 @@ Botkit now includes a built-in chat server, so that messages can be sent and rec
 
 The best way to connect to your bot is using websockets, which enables real-time two-way delivery of messages. Websocket connections remain open, which allows the bot to send multiple messages in sequence, or take longer than usual to process a request before sending a response.
 
-[The bundled web chat client](botkit_chat_widget.md) is configured to use websockets by default, and handles all of the complexity of managing the connection, including gracefully handling disconnects and reconnects that may occur. See [connection events below](#connection-events).
+[The bundled web chat client](botkit_chat_client.md) is configured to use websockets by default, and handles all of the complexity of managing the connection, including gracefully handling disconnects and reconnects that may occur. See [connection events below](#connection-events).
 
 The websocket server accepts connections at the root URL of your Botkit application. If your application is served over SSL, the url will be `wss://<my_bot_url>`. Otherwise, use the unencrypted url at `ws://<my_bot_url>`
 
