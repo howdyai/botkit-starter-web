@@ -42,6 +42,7 @@ which includes custom metrics, daily, weekly and monthly stats, user retention r
 a queryable customer database, and full transcripts of every conversation your bot conducts.
 
 * [How to share user account/profile info with Botkit](docs/botkit_web_client.md#share-user-accounts--profile-data-with-botkit)
+* [Botkit Studio Metrics Knowledge Base](http://botkit.groovehq.com/knowledge_base/categories/metrics-7)
 
 ### Customizable web-based chat client
 
