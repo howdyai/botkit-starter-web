@@ -14,7 +14,7 @@ of one or more Botkit event handers, middlewares, or related features. [Refer to
 
 Sample code for a simple skill module is below. To enable this module, copy this code into a file in this project called `skills/example.js` and restart your bot.
 
-```Javascript
+```js
 module.exports = function(controller) {
 
     // My custom skill module!
@@ -56,7 +56,7 @@ Inside the script editor, click the "Code" button. A dialog box will appear with
 
 A skill module built to work with a Botkit Studio script called "onboarding" might look something like this. Note that rather than directly using Botkit's `hears` and `on` handlers, this module uses Botkit Studio's more sophisticated conversation events that provide a cleaner separation of content and functionality.
 
-```Javascript
+```js
 module.exports = function(controller) {
 
     // this function will before BEFORE the onboarding script runs
@@ -88,7 +88,5 @@ module.exports = function(controller) {
         }
 
     });
-
-
-
-}```
+}
+```
