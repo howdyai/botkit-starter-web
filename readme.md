@@ -14,6 +14,10 @@ of this starter kit!
 
 **[![Sign up for Botkit Studio](https://raw.githubusercontent.com/howdyai/botkit/master/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
 
+Alternately, you can deploy this starter kit project directly to Glitch, or clone it to your own development environment, then add a Botkit Studio access token at a later point.
+
+[Remix on Glitch](https://glitch.com/~botkit-web)
+
 ## Add Features with Botkit Studio
 
 Bots can be thought of as a series of pre-defined conversations, navigated by users who exchange messages with the bot application. The bot is responsible for replying with the appropriate message, and taking whatever automated actions are necessary to satisfy the user.
