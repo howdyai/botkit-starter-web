@@ -39,6 +39,19 @@ of your bot stays clean and easy to maintain by separating the form from the fun
 * [Botkit Studio Knowledge Base](http://botkit.groovehq.com/help_center)
 * [Botkit Studio API documentation](https://github.com/howdyai/botkit/blob/master/docs/readme-studio.md#why-use-botkit-studio)
 
+## The full power of Botkit, in your app or site
+
+Botkit's SDK powers tens-of-thousands of bots, and supports development of chatbots on
+all major messaging platforms. Members of the Botkit developer community have created dozens of useful plugins,
+including plugins that add compatibility with top A.I. technologies like IBM Watson, DialogFlow, and RASA.
+
+New code-driven features can be added to this starter kit by creating "skills" which are
+Javascript modules containing a set of specialized pattern matchers, handler functions and middlewares.
+
+* **[How to build Botkit Skill Modules](docs/how_to_build_skills.md)**
+* [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
+
+
 ## Analytics
 
 Out of the box, Botkit Anywhere works with Botkit Studio's analytics capabilities,
@@ -68,18 +81,6 @@ New chat features such as custom cards or actions can be added with just a littl
 * [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
 * [How to share user account/profile info with Botkit](docs/botkit_web_client.md#share-user-accounts--profile-data-with-botkit)
 
-## The full power of Botkit, in your app or site
-
-Botkit's SDK powers tens-of-thousands of bots, and supports development of chatbots on
-all major messaging platforms. Members of the Botkit developer community have created dozens of useful plugins,
-including plugins that add compatibility with top A.I. technologies like IBM Watson, DialogFlow, and RASA.
-
-New code-driven features can be added to this starter kit by creating "skills" which are
-Javascript modules containing a set of specialized pattern matchers, handler functions and middlewares.
-
-* **[How to build Botkit Skill Modules](docs/how_to_build_skills.md)**
-* [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
-
 ## Chat Server and API
 
 Botkit Anywhere's built-in chat server can handle thousands of simultaneous one-on-one conversations with your users.
@@ -93,3 +94,23 @@ and account-linking features that enable you to identify existing users to your 
 * [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
 * [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
 * [How to enable message history API](docs/botkit_chat_server.md#enable-message-history)
+
+
+# Developer & Support Community
+
+You can find full documentation for Botkit on our [GitHub page](https://github.com/howdyai/botkit/blob/master/readme.md). Botkit Studio users can access the [Botkit Studio Knowledge Base](https://botkit.groovehq.com/help_center) for help in managing their account.
+
+###  Need more help?
+* Glitch allows users to ask the community for help directly from the editor! For more information on raising your hand, [read this blog post.](https://medium.com/glitch/just-raise-your-hand-how-glitch-helps-aa6564cb1685)
+
+* Join our thriving community of Botkit developers and bot enthusiasts at large. Over 4500 members strong, [our open Slack group](http://community.botkit.ai) is _the place_ for people interested in the art and science of making bots.
+
+ Come to ask questions, share your progress, and commune with your peers!
+
+* We also host a [regular meetup and annual conference called TALKABOT.](http://talkabot.ai) Come meet and learn from other bot developers!
+
+ [Full video of our 2016 event is available on Youtube.](https://www.youtube.com/playlist?list=PLD3JNfKLDs7WsEHSal2cfwG0Fex7A6aok)
+
+# About Botkit
+
+Botkit is a product of [Howdy](https://howdy.ai) and made in Austin, TX with the help of a worldwide community of botheads.
