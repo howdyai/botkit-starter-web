@@ -81,6 +81,6 @@ It is a great solution for including one-on-one chat in a web site or native app
 Additionally, Botkit Anywhere includes APIs for retrieving a user's conversation history,
 and account-linking features that enable you to identify existing users to your bot.
 
-  * Websockets
-  * Webhooks
-  * How to set up DB for message history etc
+  * [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
+  * [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
+  * [How to enable message history API](docs/botkit_chat_server.md#enabling-message-history)
