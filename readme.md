@@ -41,6 +41,8 @@ Out of the box, Botkit Anywhere works with Botkit Studio's analytics capabilitie
 which includes custom metrics, daily, weekly and monthly stats, user retention reports,
 a queryable customer database, and full transcripts of every conversation your bot conducts.
 
+* [How to share user account/profile info with Botkit](docs/botkit_web_client.md##botkitidentifyuseruser)
+
 ### Customizable web-based chat client
 
 Botkit Anywhere includes an easy to customize chat client that can be used as a full-screen web app, built into the structure
@@ -58,7 +60,7 @@ New chat features such as custom cards or actions can be added with just a littl
 * [How to embed a bot in your website](docs/botkit_web_client.md#embed-botkit-in-a-website-with-iframes)
 * [How to customize the look and feel of your web chat](docs/botkit_web_client.md#customize-the-look-and-feel-of-the-chat-interface)
 * [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
-* [How to specify user profile info to chat](docs/botkit_web_client.md##botkitidentifyuseruser)
+* [How to share user account/profile info with Botkit](docs/botkit_web_client.md##botkitidentifyuseruser)
 
 ### The full power of Botkit, in your app or site
 
