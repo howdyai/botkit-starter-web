@@ -2,7 +2,7 @@
 
 Embed a bot in any web page or app with Botkit for the Web.
 
-Botkit Anywhere is a self-contained chat server, API and messaging client that has been built on top of the industry leading Botkit development stack.
+Botkit Anywhere is a self-contained chat server, API and web-baed messaging client that has been built on top of the industry leading Botkit development stack.
 
 ## Get Started
 
