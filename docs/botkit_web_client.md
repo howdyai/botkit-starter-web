@@ -62,6 +62,17 @@ Botkit.trigger('help','help_with_checkout');
 Identify an existing user to the chat widget. This can be used to identify the user AFTER the chat begins, instead of passing in the information to Botkit.boot().
 
 
+## Share User Accounts / Profile data with Botkit
+
+In order to seamlessly integrate your new bot with your existing app or website, Botkit supports sharing user account information between the main app and the bot.
+
+To do this, either call [Botkit.boot(user)](#botkitbootuser) with the optional user profile parameter, or call [Botkit.identifyUser(user)](#botkitidentifyuseruser) after the connection has been established.
+
+If provided, user information will be used in a variety of ways:
+
+* [Message history](botkit_chat_server.md#enable-message-history) will be associated with the existing user account
+* [Botkit Studio's analytics system](../readme.md#analytics) will display up-to-date user profile data in various reports
+* Your Botkit application can access the account information using the [built-in storage mechanisms](https://github.com/howdyai/botkit/blob/master/docs/storage.md), making it easier to use this information during conversations or inside [skill modules](how_to_build_skills.md).
 
 ## Embed Botkit in a Website with iFrames
 
