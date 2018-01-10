@@ -16,7 +16,7 @@ of this starter kit!
 
 Alternately, you can deploy this starter kit project directly to Glitch, or clone it to your own development environment, then add a Botkit Studio access token at a later point.
 
-[Remix on Glitch](https://glitch.com/~botkit-web)
+* [Remix on Glitch](https://glitch.com/~botkit-web)
 
 ## Add Features with Botkit Studio
 
