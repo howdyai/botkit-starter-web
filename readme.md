@@ -55,10 +55,10 @@ The chat client is built with HTML, CSS and vanilla Javascript.
 Developers can customize the look and feel of the client by modifying the included markup and CSS.
 New chat features such as custom cards or actions can be added with just a little bit of code.
 
-* [How to embed a bot in your website](docs/botkit_web_client.md)
-* [How to customize the look and feel of your web chat](docs/botkit_web_client.md)
-* [How to extend the events and UI of your web chat](docs/botkit_web_client.md)
-* [How to specify user profile info to chat](docs/botkit_web_client.md)
+* [How to embed a bot in your website](docs/botkit_web_client.md#embed-botkit-in-a-website-with-iframes)
+* [How to customize the look and feel of your web chat](docs/botkit_web_client.md#customize-the-look-and-feel-of-the-chat-interface)
+* [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
+* [How to specify user profile info to chat](docs/botkit_web_client.md##botkitidentifyuseruser)
 
 ### The full power of Botkit, in your app or site
 
@@ -72,13 +72,6 @@ Javascript modules containing a set of specialized pattern matchers, handler fun
 * [How to build Botkit Skill Modules](docs/how_to_build_skills.md)
 * [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
 
-
-How to configure, deploy and host your bot
-  * How to specify user profile info to chat
-  * How to set up DB for message history etc
-
-
-
 ## Chat Server and API
 
 Botkit Anywhere's built-in chat server can handle thousands of simultaneous one-on-one conversations with your users.
@@ -88,11 +81,6 @@ It is a great solution for including one-on-one chat in a web site or native app
 Additionally, Botkit Anywhere includes APIs for retrieving a user's conversation history,
 and account-linking features that enable you to identify existing users to your bot.
 
-* How to set up DB for message history etc
-
-
-## TOC
-
-
-
-How to add additional features to your bot
+  * Websockets
+  * Webhooks
+  * How to set up DB for message history etc

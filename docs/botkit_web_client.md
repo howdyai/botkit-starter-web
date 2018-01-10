@@ -69,7 +69,7 @@ Botkit's web chat can be added to a website using an iframe to embed the chat fu
 The starter kit application includes a page with the necessary embed code that can be copy-pasted into the source of your website.
 
 An example embed code is below.  It includes the markup for an iframe, as well as Javascript and CSS links for
-styling the embedded chat widget.
+styling the embedded chat widget. Note, replace `{{base_url}}` with the url of your Botkit application.
 
 ```html
 <div id="embedded_messenger">
@@ -84,6 +84,7 @@ Botkit.boot(options);
 <link rel="stylesheet" href="//{{base_url}}/embed.css" />
 
 ```
+
 
 Using the code above and the built-in stylesheet, the chat widget will look like this:
 

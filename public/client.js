@@ -66,27 +66,25 @@
         this.clearReplies();
         that.renderMessage(message);
 
-        if (this.options.use_sockets) {
-          this.socket.send(JSON.stringify({
-            type: 'message',
-            text: text,
-            user: this.guid,
-            channel: 'socket',
-          }));
-        } else {
+        that.deliverMessage({
+          type: 'message',
+          text: text,
+          user: this.guid,
+          channel: this.options.use_sockets ? 'socket' : 'webhook'
+        });
 
-          this.webhook({
-            type: 'message',
-            text: text,
-            user: this.guid,
-            channel: 'webhook',
-          });
-        }
         this.input.value = '';
 
         this.trigger('sent', message);
 
         return false;
+      },
+      deliverMessage: function(message) {
+        if (this.options.use_sockets) {
+          this.socket.send(JSON.stringify(message));
+        } else {
+          this.webhook(message);
+        }
       },
       getHistory: function(guid) {
         that = this;
@@ -176,12 +174,12 @@
           console.log('CONNECTED TO SOCKET');
           that.reconnect_count = 0;
           that.trigger('connected', event);
-          that.socket.send(JSON.stringify({
+          that.deliverMessage({
             type: connectEvent,
             user: that.guid,
             channel: 'socket',
             user_profile: that.current_user ? that.current_user : null,
-          }));
+          });
         });
 
         that.socket.addEventListener('error', function(event) {
@@ -240,13 +238,13 @@
         }
       },
       triggerScript: function(script, thread) {
-        this.socket.send(JSON.stringify({
+        this.deliverMessage({
           type: 'trigger',
           user: this.guid,
           channel: 'socket',
           script: script,
           thread: thread
-        }));
+        });
       },
       identifyUser: function(user) {
 
@@ -257,12 +255,12 @@
 
         this.current_user = user;
 
-        this.socket.send(JSON.stringify({
+        this.deliverMessage({
           type: 'identify',
           user: this.guid,
           channel: 'socket',
           user_profile: user,
-        }));
+        });
       },
       receiveCommand: function(event) {
         switch (event.data.name) {
