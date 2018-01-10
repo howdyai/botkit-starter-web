@@ -27,7 +27,6 @@ var Botkit = {
     if (this.container) {
       this.container.className = 'active';
     }
-    // this.tellClient('activate');
     this.setCookie('messenger_active', this.active);
   },
   deactivate: function() {
@@ -35,7 +34,6 @@ var Botkit = {
     if (this.container) {
       this.container.className = '';
     }
-    // this.tellClient('deactivate');
     this.setCookie('messenger_active', this.active);
   },
   toggle: function() {
@@ -45,8 +43,8 @@ var Botkit = {
       this.activate();
     }
   },
-  tellClient: function(message) {
-    this.chatClient.postMessage(message, '*');
+  trigger: function(event) {
+    this.chatClient.postMessage(event, '*');
   },
   receiveMessage: function(message) {
     // message contains the following fields:
@@ -54,7 +52,7 @@ var Botkit = {
 
     switch (message.data.name) {
       case 'booted':
-        Botkit.tellClient({
+        Botkit.trigger({
           name: 'connect',
           user: Botkit.current_user ? Botkit.current_user : null,
         });
@@ -71,7 +69,7 @@ var Botkit = {
   },
   triggerScript: function(script, thread) {
 
-    this.tellClient({
+    this.trigger({
       type: 'event',
       name: 'trigger',
       script: script,
@@ -81,11 +79,11 @@ var Botkit = {
   identifyUser: function(user) {
 
     // user should contain any of the following:
-    // id, email, nickname, first_name, last_name, full_name, gender, timezone, timezone_offset
+    // id, email, name, first_name, last_name, full_name, gender, timezone, timezone_offset
 
     this.current_user = user;
 
-    this.tellClient({
+    this.trigger({
       type: 'event',
       name: 'identify',
       user: user,

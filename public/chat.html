@@ -14,7 +14,6 @@
             <div class="offline">
                 Offline! Reload to reconnect.
             </div>
-
             <section>
                 <div id="message_list">
                     <div id="message_template">
@@ -44,7 +43,7 @@
             <div id="message_replies">
             </div>
             <footer>
-                <form onsubmit="messenger.send(messenger.input.value, event)">
+                <form onsubmit="Botkit.send(Botkit.input.value, event)">
                     <input type="text" autocomplete="off" id="messenger_input" placeholder="Type here..." />
                     <button type="submit">Send</button>
                 </form>

@@ -1,6 +1,6 @@
     var converter = new showdown.Converter();
 
-    var messenger = {
+    var Botkit = {
       config: {
         ws_url: (location.protocol === 'https:' ? 'wss' : 'ws') + '://' + location.host,
         reconnect_timeout: 3000,
@@ -119,18 +119,12 @@
         var that = this;
 
         if (user && user.id) {
-          setCookie('guid', user.id, 1);
+          Botkit.setCookie('guid', user.id, 1);
 
           user.timezone_offset = new Date().getTimezoneOffset();
           that.current_user = user;
           console.log('CONNECT WITH USER', user);
         }
-
-
-        // TODO: how should we send the user profile info?
-        // TODO: and then have it stored/synced with Metrics
-        // TODO: Also, have to figure out how to transition from one GUID to another if user links after chat starts?
-
 
         // connect to the chat server!
         if (that.options.use_sockets) {
@@ -142,12 +136,12 @@
       },
       connectWebhook: function() {
         var that = this;
-        if (getCookie('guid')) {
-          that.guid = getCookie('guid');
+        if (Botkit.getCookie('guid')) {
+          that.guid = Botkit.getCookie('guid');
           connectEvent = 'welcome_back';
         } else {
           that.guid = guid();
-          setCookie('guid', that.guid, 1);
+          Botkit.setCookie('guid', that.guid, 1);
         }
 
         that.getHistory();
@@ -167,12 +161,12 @@
         that.socket = new WebSocket(ws_url);
 
         var connectEvent = 'hello';
-        if (getCookie('guid')) {
-          that.guid = getCookie('guid');
+        if (Botkit.getCookie('guid')) {
+          that.guid = Botkit.getCookie('guid');
           connectEvent = 'welcome_back';
         } else {
           that.guid = guid();
-          setCookie('guid', that.guid, 1);
+          Botkit.setCookie('guid', that.guid, 1);
         }
 
         that.getHistory();
@@ -259,7 +253,7 @@
         user.timezone_offset = new Date().getTimezoneOffset();
 
         this.guid = user.id;
-        setCookie('guid', user.id, 1);
+        Botkit.setCookie('guid', user.id, 1);
 
         this.current_user = user;
 
@@ -275,16 +269,16 @@
           case 'trigger':
             // tell Botkit to trigger a specific script/thread
             console.log('TRIGGER', event.data.script, event.data.thread);
-            messenger.triggerScript(event.data.script, event.data.thread);
+            Botkit.triggerScript(event.data.script, event.data.thread);
             break;
           case 'identify':
             // link this account info to this user
             console.log('IDENTIFY', event.data.user);
-            messenger.identifyUser(event.data.user);
+            Botkit.identifyUser(event.data.user);
             break;
           case 'connect':
             // link this account info to this user
-            messenger.connect(event.data.user);
+            Botkit.connect(event.data.user);
             break;
           default:
             console.log('UNKNOWN COMMAND', event.data);
@@ -297,7 +291,37 @@
         }
 
       },
-      boot: function() {
+      setCookie: function(cname, cvalue, exdays) {
+        var d = new Date();
+        d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+        var expires = "expires=" + d.toUTCString();
+        document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+      },
+      getCookie: function(cname) {
+        var name = cname + "=";
+        var decodedCookie = decodeURIComponent(document.cookie);
+        var ca = decodedCookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      },
+      generate_guid: function() {
+        function s4() {
+          return Math.floor((1 + Math.random()) * 0x10000)
+            .toString(16)
+            .substring(1);
+        }
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+          s4() + '-' + s4() + s4() + s4();
+      },
+      boot: function(user) {
 
         console.log('Booting up');
 
@@ -421,9 +445,8 @@
 
           console.log('Messenger booted in stand-alone mode');
           // this is a stand-alone client. connect immediately.
-          that.connect();
+          that.connect(user);
         }
-
 
         return that;
       }
@@ -433,39 +456,5 @@
     (function() {
       // your page initialization code here
       // the DOM will be available here
-      messenger.boot();
+      Botkit.boot();
     })();
-
-
-    function setCookie(cname, cvalue, exdays) {
-      var d = new Date();
-      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-      var expires = "expires=" + d.toUTCString();
-      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-    }
-
-    function getCookie(cname) {
-      var name = cname + "=";
-      var decodedCookie = decodeURIComponent(document.cookie);
-      var ca = decodedCookie.split(';');
-      for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-          c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-          return c.substring(name.length, c.length);
-        }
-      }
-      return "";
-    }
-
-    function guid() {
-      function s4() {
-        return Math.floor((1 + Math.random()) * 0x10000)
-          .toString(16)
-          .substring(1);
-      }
-      return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-        s4() + '-' + s4() + s4() + s4();
-    }
