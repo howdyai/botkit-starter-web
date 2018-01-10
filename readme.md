@@ -92,4 +92,4 @@ and account-linking features that enable you to identify existing users to your 
 * **[Chat Server Overview](docs/botkit_chat_server.md)**
 * [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
 * [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
-* [How to enable message history API](docs/botkit_chat_server.md#enabling-message-history)
+* [How to enable message history API](docs/botkit_chat_server.md#enable-message-history)
