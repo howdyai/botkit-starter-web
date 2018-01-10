@@ -77,7 +77,7 @@ including plugins that add compatibility with top A.I. technologies like IBM Wat
 New code-driven features can be added to this starter kit by creating "skills" which are
 Javascript modules containing a set of specialized pattern matchers, handler functions and middlewares.
 
-* [How to build Botkit Skill Modules](docs/how_to_build_skills.md)
+* **[How to build Botkit Skill Modules](docs/how_to_build_skills.md)**
 * [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
 
 ## Chat Server and API
