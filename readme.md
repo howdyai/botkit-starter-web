@@ -68,7 +68,7 @@ New chat features such as custom cards or actions can be added with just a littl
 * [How to extend the UI of your web chat with custom fields](docs/botkit_web_client.md#using-botkit-studio-custom-fields-to-add-custom-features)
 * [How to share user account/profile info with Botkit](docs/botkit_web_client.md#share-user-accounts--profile-data-with-botkit)
 
-### The full power of Botkit, in your app or site
+## The full power of Botkit, in your app or site
 
 Botkit's SDK powers tens-of-thousands of bots, and supports development of chatbots on
 all major messaging platforms. Members of the Botkit developer community have created dozens of useful plugins,
