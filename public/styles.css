@@ -150,7 +150,8 @@ a.button {
   #message_window #message_template {
     display: none; }
   #message_window .message {
-    padding: 1rem;
+    font-size: 14px;
+    padding: 0.5rem;
     background: #FFF;
     border-radius: 5px;
     width: auto;
@@ -183,7 +184,8 @@ a.button {
       margin: 0.5rem;
       border: 1px solid blue;
       border-radius: 16px;
-      padding: 0.5rem 1rem; }
+      padding: 0.25rem 1rem;
+      font-size: 14px; }
 
 /* special styles for homepage */
 #home {
