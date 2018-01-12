@@ -138,7 +138,7 @@
           that.guid = Botkit.getCookie('guid');
           connectEvent = 'welcome_back';
         } else {
-          that.guid = guid();
+          that.guid = that.generate_guid();
           Botkit.setCookie('guid', that.guid, 1);
         }
 
@@ -163,7 +163,7 @@
           that.guid = Botkit.getCookie('guid');
           connectEvent = 'welcome_back';
         } else {
-          that.guid = guid();
+          that.guid = that.generate_guid();
           Botkit.setCookie('guid', that.guid, 1);
         }
 
