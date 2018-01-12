@@ -19,9 +19,11 @@
                     <div id="message_template">
                         <div class="message {{message.type}}">
                             {{#if message.isTyping}}
-                                <div class="typing-indicator">
-                                    ...
-                                </div>
+                              <div class="typing-indicator">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                              </div>
                             {{/if}}
                             {{{message.html}}}
 

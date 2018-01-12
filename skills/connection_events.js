@@ -20,6 +20,12 @@ module.exports = function(controller) {
         next();
     });
 
+    controller.studio.before('tutorial', function(convo, next) {
+        convo.setVar('bot', controller.studio_identity);
+        next();
+    });
+
+
     controller.on('reconnect', function(bot, message) {
 
         // the connection between the client and server experienced a disconnect/reconnect

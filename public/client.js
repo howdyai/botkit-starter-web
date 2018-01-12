@@ -1,4 +1,5 @@
     var converter = new showdown.Converter();
+    converter.setOption('openLinksInNewWindow', true);
 
     var Botkit = {
       config: {
@@ -412,6 +413,14 @@
 
               })(message.quick_replies[r]);
             }
+
+            if (message.disable_input) {
+              that.input.disabled = true;
+            } else {
+              that.input.disabled = false;
+            }
+          } else {
+            that.input.disabled = false;
           }
         });
 

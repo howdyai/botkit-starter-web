@@ -187,6 +187,30 @@ a.button {
       padding: 0.25rem 1rem;
       font-size: 14px; }
 
+/* typing indicator CSS based on code by Joseph Fusco -> https://codepen.io/fusco/pen/XbpaYv */
+.typing-indicator {
+  display: table;
+  margin: 0 auto;
+  position: relative; }
+  .typing-indicator span {
+    height: 5px;
+    width: 5px;
+    float: left;
+    margin: 0 1px;
+    background-color: #9E9EA1;
+    display: block;
+    border-radius: 50%;
+    opacity: 0.4; }
+    .typing-indicator span:nth-of-type(1) {
+      animation: 1s blink infinite 0.3333s; }
+    .typing-indicator span:nth-of-type(2) {
+      animation: 1s blink infinite 0.6666s; }
+    .typing-indicator span:nth-of-type(3) {
+      animation: 1s blink infinite 0.9999s; }
+
+@keyframes blink {
+  50% {
+    opacity: 1; } }
 /* special styles for homepage */
 #home {
   position: relative; }

@@ -32,7 +32,7 @@ var bot_options = {
     studio_token: process.env.studio_token,
     studio_command_uri: process.env.studio_command_uri,
     studio_stats_uri: process.env.studio_command_uri,
-    replyWithTyping: false,
+    replyWithTyping: true,
 };
 
 // Use a mongo database if specified, otherwise store in a JSON file local to the app.
