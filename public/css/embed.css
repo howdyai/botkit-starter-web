@@ -1,14 +1,14 @@
 #embedded_messenger {
   position: fixed;
   z-index: 1000;
-  bottom: calc(-250px);
+  bottom: -400px;
   right: 2rem;
-  height: 284px;
+  height: 434px;
   transition: 0.5s ease-in-out bottom; }
   #embedded_messenger.active {
     bottom: 0; }
   #embedded_messenger iframe {
-    height: 250px;
+    height: 400px;
     width: 100%;
     border: 0; }
   #embedded_messenger #message_header {
