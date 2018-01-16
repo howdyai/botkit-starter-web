@@ -1,7 +1,6 @@
 var debug = require('debug')('botkit:remote triggers');
 
 /* receive and respond to remote script triggers */
-
 module.exports = function(controller) {
 
   controller.on('trigger', function(bot, event) {
