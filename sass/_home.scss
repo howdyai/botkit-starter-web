@@ -1,6 +1,8 @@
 #home {
     @include clearfix;
     position: relative;
+    max-width: 650px;
+    margin: auto;
 }
 
 #homepage_bot {
@@ -8,7 +10,6 @@
     height: 450px;
     float: left;
     border: 5px solid #333;
-    border-radius: 4px;
 
     iframe {
         border: 0;

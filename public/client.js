@@ -398,9 +398,13 @@
           that.clearReplies();
           if (message.quick_replies) {
 
+            var list = document.createElement('ul');
+
+            var elements = [];
             for (var r = 0; r < message.quick_replies.length; r++) {
               (function(reply) {
 
+                var li = document.createElement('li');
                 var el = document.createElement('a');
                 el.innerHTML = reply.title;
                 el.href = '#';
@@ -409,10 +413,21 @@
                   that.quickReply(reply.payload);
                 }
 
-                that.replies.appendChild(el);
+                li.appendChild(el);
+                list.appendChild(li);
+                elements.push(li);
 
               })(message.quick_replies[r]);
             }
+
+            that.replies.appendChild(list);
+
+            var width = 0;
+            // resize this element so it will scroll horizontally
+            for (var e = 0; e < elements.length; e++) {
+                width = width + elements[e].offsetWidth + 18;
+            }
+            list.style.width = width + 'px';
 
             if (message.disable_input) {
               that.input.disabled = true;

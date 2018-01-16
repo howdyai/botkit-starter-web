@@ -16,13 +16,13 @@ The web chat client is composed of these files:
 
 * HTML user interface [public/chat.html](../public/chat.html)
 * Javascript application [public/client.js](../public/client.js)
-* Compiled CSS theme [public/styles.css](../public/styles.css)
+* Compiled CSS theme [public/css/styles.css](../public/styles.css)
 * Source SASS file [sass/_chat.scss](../sass/_chat.scss)
 
 Additional functionality used by the iframe embed:
 
 * Embedded chat app [public/embed.js](../public/embed.js)
-* Compiled CSS for embedded window [public/embed.css](../public/embed.css)
+* Compiled CSS for embedded window [public/css/embed.css](../public/embed.css)
 * Source SASS file [sass/embed.scss](../sass/embed.scss)
 
 ## Client API
@@ -123,7 +123,7 @@ The web chat interface is built with HTML and CSS. The look and feel can be exte
 The uncompiled SASS used to style the web chat is included in the starter kit as `sass/_chat.scss` Changes made to this file must be compiled into the final stylesheet. To do this, run the following command from the root of the starter kit:
 
 ```
-sass --update sass/:public/
+sass --update sass/:public/css/
 ```
 
 The annotated boilerplate HTML for Botkit's web client is below.

@@ -1,8 +1,15 @@
 $action_color: orange;
+$background: #FFFFFF;
+$bot_message_background: #F0F0F0;
+$bot_message_text: #333;
+$human_message_background: $botkit_purple;
+$human_message_text: white;
 
 #message_window {
-    background: #f0f0f0;
-    border: 2px solid #CCC;
+    background: $background;
+    border-left: 1px solid #CCC;
+    border-right: 1px solid #CCC;
+
     /*height: 500px;
     width: 320px;*/
     height: 100%;
@@ -10,6 +17,7 @@ $action_color: orange;
     /*margin: 2rem auto;*/
     display: flex;
     flex-direction: column;
+    font-family: 'helvetica', sans-serif;
 
     .disconnected {
         background: #FFFFCC;
@@ -48,9 +56,12 @@ $action_color: orange;
 
   footer {
       border-top: 1px solid #CCC;
+      padding: 0.25rem;
       input[type="text"] {
           flex-grow: 1;
           font-size: 1.25rem;
+          outline: none;
+          border: none;
       }
       button {
          width: 50px;
@@ -75,11 +86,13 @@ $action_color: orange;
   .message {
       font-size: 14px;
       padding: 0.5rem;
-      background: #FFF;
+      background: $bot_message_background;
+      color: $bot_message_text;
       border-radius: 5px;
       width: auto;
       display: inline-block;
       max-width: 75%;
+
   }
 
     .button_message {
@@ -108,16 +121,33 @@ $action_color: orange;
 
   .message.outgoing {
       float: right;
+
+      background: $human_message_background;
+      color: $human_message_text;
+
   }
 
   #message_replies {
       text-align: center;
+      overflow-x: auto;
+      flex-shrink: 0;
+      
+      ul {
+          list-style-type: none;
+          margin: 0px auto;
+          padding: 0;
+          li {
+              display: inline-block;
+              margin: 0.5rem;
+              margin-left: 0;
+          }
+      }
 
       a {
          text-decoration: none;
-         display: inline-block;
-         margin: 0.5rem;
-         border: 1px solid blue;
+         display: block;
+         border: 1px solid $botkit_purple;
+         color: $botkit_purple;
          border-radius: 16px;
          padding: 0.25rem 1rem;
          font-size: 14px;
@@ -137,7 +167,7 @@ $action_color: orange;
     width: 5px;
     float: left;
     margin: 0 1px;
-    background-color: #9E9EA1;
+    background-color: $bot_message_text;
     display: block;
     border-radius: 50%;
     opacity: 0.4;

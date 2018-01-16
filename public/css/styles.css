@@ -100,15 +100,17 @@ a.button {
 
 /* chat client */
 #message_window {
-  background: #f0f0f0;
-  border: 2px solid #CCC;
+  background: #FFFFFF;
+  border-left: 1px solid #CCC;
+  border-right: 1px solid #CCC;
   /*height: 500px;
   width: 320px;*/
   height: 100%;
   width: 100%;
   /*margin: 2rem auto;*/
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  font-family: 'helvetica', sans-serif; }
   #message_window .disconnected {
     background: #FFFFCC;
     padding: 0.25rem; }
@@ -132,10 +134,13 @@ a.button {
       margin: 0.25rem;
       clear: both; }
   #message_window footer {
-    border-top: 1px solid #CCC; }
+    border-top: 1px solid #CCC;
+    padding: 0.25rem; }
     #message_window footer input[type="text"] {
       flex-grow: 1;
-      font-size: 1.25rem; }
+      font-size: 1.25rem;
+      outline: none;
+      border: none; }
     #message_window footer button {
       width: 50px;
       background: none;
@@ -152,7 +157,8 @@ a.button {
   #message_window .message {
     font-size: 14px;
     padding: 0.5rem;
-    background: #FFF;
+    background: #F0F0F0;
+    color: #333;
     border-radius: 5px;
     width: auto;
     display: inline-block;
@@ -175,14 +181,26 @@ a.button {
   #message_window .message p:last-child {
     margin-bottom: 0; }
   #message_window .message.outgoing {
-    float: right; }
+    float: right;
+    background: #a795ef;
+    color: white; }
   #message_window #message_replies {
-    text-align: center; }
+    text-align: center;
+    overflow-x: auto;
+    flex-shrink: 0; }
+    #message_window #message_replies ul {
+      list-style-type: none;
+      margin: 0px auto;
+      padding: 0; }
+      #message_window #message_replies ul li {
+        display: inline-block;
+        margin: 0.5rem;
+        margin-left: 0; }
     #message_window #message_replies a {
       text-decoration: none;
-      display: inline-block;
-      margin: 0.5rem;
-      border: 1px solid blue;
+      display: block;
+      border: 1px solid #a795ef;
+      color: #a795ef;
       border-radius: 16px;
       padding: 0.25rem 1rem;
       font-size: 14px; }
@@ -197,7 +215,7 @@ a.button {
     width: 5px;
     float: left;
     margin: 0 1px;
-    background-color: #9E9EA1;
+    background-color: #333;
     display: block;
     border-radius: 50%;
     opacity: 0.4; }
@@ -213,7 +231,9 @@ a.button {
     opacity: 1; } }
 /* special styles for homepage */
 #home {
-  position: relative; }
+  position: relative;
+  max-width: 650px;
+  margin: auto; }
   #home:after {
     content: "";
     display: table;
@@ -224,7 +244,6 @@ a.button {
   height: 450px;
   float: left;
   border: 5px solid #333;
-  border-radius: 4px;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5); }
   #homepage_bot iframe {
     border: 0;
