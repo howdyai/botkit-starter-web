@@ -2,6 +2,11 @@
    This module should be DISABLED before you go to production!!! */
 module.exports = function(controller) {
 
+    controller.studio.before('tutorial', function(convo, next) {
+        convo.setVar('bot',convo.context.bot.identity);
+        next();
+    });
+
     controller.studio.before('create_a_reply',  function(convo, next) {
 
         // make this bot's studio identity available
@@ -29,7 +34,7 @@ module.exports = function(controller) {
           var text = convo.extractResponse('response_text');
 
           controller.studio.createScript(convo.context.bot, trigger, text).then(function(script) {
-              console.log('SUCCESSFULLY CREATED SCRIPT', script);
+              convo.setVar('new_script', script);
             next();
           }).catch(function(err) {
               convo.setVar('error', JSON.stringify(err));
@@ -38,25 +43,6 @@ module.exports = function(controller) {
           });
 
         });
-
-
-        controller.hears('edit', 'message_received', function(bot, message) {
-
-          controller.studio.getScripts().then(function(scripts) {
-
-            var reply = 'Which of my scripts would you like to modify?\n';
-
-            for (var x = 0; x < scripts.length; x++) {
-
-              reply = reply + '* [' + scripts[x].name + '](https://studio.botkit.ai/app/bots/' + bot.identity.botkit_studio_id + '/commands/' + scripts[x].id + ')\n';
-
-            }
-
-            bot.reply(message, reply);
-
-          });
-        });
-
 
     }
 
