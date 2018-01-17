@@ -422,12 +422,12 @@
 
             that.replies.appendChild(list);
 
-            var width = 0;
-            // resize this element so it will scroll horizontally
-            for (var e = 0; e < elements.length; e++) {
-                width = width + elements[e].offsetWidth + 18;
-            }
-            list.style.width = width + 'px';
+            // var width = 0;
+            // // resize this element so it will scroll horizontally
+            // for (var e = 0; e < elements.length; e++) {
+            //     width = width + elements[e].offsetWidth + 18;
+            // }
+            // list.style.width = width + 'px';
 
             if (message.disable_input) {
               that.input.disabled = true;
