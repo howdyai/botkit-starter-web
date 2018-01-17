@@ -131,7 +131,8 @@ $human_message_text: white;
       text-align: center;
       overflow-x: auto;
       flex-shrink: 0;
-      
+      -webkit-overflow-scrolling: touch; /* Lets it scroll lazy */
+
       ul {
           list-style-type: none;
           margin: 0px auto;

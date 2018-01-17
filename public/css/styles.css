@@ -187,7 +187,9 @@ a.button {
   #message_window #message_replies {
     text-align: center;
     overflow-x: auto;
-    flex-shrink: 0; }
+    flex-shrink: 0;
+    -webkit-overflow-scrolling: touch;
+    /* Lets it scroll lazy */ }
     #message_window #message_replies ul {
       list-style-type: none;
       margin: 0px auto;
