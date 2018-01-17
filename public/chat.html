@@ -32,15 +32,16 @@
                             {{#if message.open_link}}
                               <a href="{{{message.open_link}}}" target="_blank" class="button_message">{{#if message.link_title}}{{message.link_title}}{{else}}{{message.open_link}}{{/if}}</a>
                             {{/if}}
-
-                            {{#message.files}}
-                              {{#if image}}
-                                <img src="{{{url}}}" alt="{{{url}}}" />
-                              {{else}}
-                                <a href="{{{url}}}">{{{url}}}</a>
-                              {{/if}}
-                            {{/message.files}}
                         </div>
+                        {{#message.files}}
+                          <div class="file_attachment">
+                          {{#if image}}
+                            <img src="{{{url}}}" alt="{{{url}}}" />
+                          {{else}}
+                            <a href="{{{url}}}" title="{{{url}}}">{{{url}}}</a>
+                          {{/if}}
+                          </div>
+                        {{/message.files}}
                     </div>
                 </div>
             </section>

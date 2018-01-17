@@ -163,6 +163,15 @@ a.button {
     width: auto;
     display: inline-block;
     max-width: 75%; }
+  #message_window .file_attachment {
+    background: #F0F0F0;
+    color: #333;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 75%; }
+    #message_window .file_attachment img {
+      max-width: 100%;
+      display: block; }
   #message_window .button_message {
     margin: 1rem 0;
     border-radius: 4px;

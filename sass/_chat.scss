@@ -95,6 +95,21 @@ $human_message_text: white;
 
   }
 
+  .file_attachment {
+
+    background: $bot_message_background;
+    color: $bot_message_text;
+    border-radius: 5px;
+    display: inline-block;
+    max-width: 75%;
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+  }
+
     .button_message {
       margin: 1rem 0;
       border-radius: 4px;
