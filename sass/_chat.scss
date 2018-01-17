@@ -42,6 +42,26 @@ $human_message_text: white;
       }
     }
 
+    .powered_by {
+      flex-shrink: 0;
+      text-align: center;
+
+      border-bottom: 1px solid #CCC;
+      font-size: 14px;
+      padding: 0.25rem;
+      color: #666;
+
+      a {
+        text-decoration: none;
+        color: #666;
+      }
+
+      img {
+        position: relative;
+        top: 2px;
+      }
+    }
+
    section {
       flex-grow:  1;
       flex-direction: column-reverse;
@@ -167,6 +187,7 @@ $human_message_text: white;
          border-radius: 16px;
          padding: 0.25rem 1rem;
          font-size: 14px;
+         cursor: pointer;
      }
    }
 }

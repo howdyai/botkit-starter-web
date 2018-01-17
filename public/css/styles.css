@@ -125,6 +125,19 @@ a.button {
     color: #FFF;
     padding: 0.25rem;
     display: block; }
+  #message_window .powered_by {
+    flex-shrink: 0;
+    text-align: center;
+    border-bottom: 1px solid #CCC;
+    font-size: 14px;
+    padding: 0.25rem;
+    color: #666; }
+    #message_window .powered_by a {
+      text-decoration: none;
+      color: #666; }
+    #message_window .powered_by img {
+      position: relative;
+      top: 2px; }
   #message_window section {
     flex-grow: 1;
     flex-direction: column-reverse;
@@ -214,7 +227,8 @@ a.button {
       color: #a795ef;
       border-radius: 16px;
       padding: 0.25rem 1rem;
-      font-size: 14px; }
+      font-size: 14px;
+      cursor: pointer; }
 
 /* typing indicator CSS based on code by Joseph Fusco -> https://codepen.io/fusco/pen/XbpaYv */
 .typing-indicator {

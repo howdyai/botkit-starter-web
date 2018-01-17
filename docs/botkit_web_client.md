@@ -89,7 +89,7 @@ styling the embedded chat widget. Note, replace `{{base_url}}` with the url of y
 </div>
 <script src="//{{base_url}}/embed.js"></script>
 <script>
-var options = {}; // see __ for options
+var options = {};
 Botkit.boot(options);
 </script>
 <link rel="stylesheet" href="//{{base_url}}/embed.css" />
