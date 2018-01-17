@@ -229,6 +229,9 @@ a.button {
       padding: 0.25rem 1rem;
       font-size: 14px;
       cursor: pointer; }
+      #message_window #message_replies a:hover {
+        background: #a795ef;
+        color: #FFF; }
 
 /* typing indicator CSS based on code by Joseph Fusco -> https://codepen.io/fusco/pen/XbpaYv */
 .typing-indicator {
