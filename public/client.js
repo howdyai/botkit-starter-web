@@ -422,6 +422,7 @@
 
             that.replies.appendChild(list);
 
+            // uncomment this code if you want your quick replies to scroll horizontally instead of stacking
             // var width = 0;
             // // resize this element so it will scroll horizontally
             // for (var e = 0; e < elements.length; e++) {
