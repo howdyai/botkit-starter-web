@@ -30,6 +30,11 @@ module.exports = function(controller) {
           // get original input
           var trigger = convo.source_message.text;
 
+          // sanitize the trigger text a bit
+          // remove punctuation at the end of the sentence.
+          // allow users to exclude punctuation in real life.
+          trigger = trigger.replace(/(\?|\!|\.)*$/,'').toLowerCase();
+
           // get reply
           var text = convo.extractResponse('response_text');
 
