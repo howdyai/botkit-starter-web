@@ -54,7 +54,7 @@ This can be used to trigger specific bot actions from the main web page. For exa
 or offer assistance during an ecommerce checkout flow.
 
 ```js
-Botkit.trigger('help','help_with_checkout');
+Botkit.triggerScript('help','help_with_checkout');
 ```
 
 #### Botkit.identifyUser(user)
