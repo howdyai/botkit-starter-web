@@ -49,6 +49,20 @@ In addition, the bot may fire a `reconnect` event. These occur when an ongoing c
 
 These events can be [handled with skill modules](how_to_build_skills.md) to do things like send greetings or trigger analytics events.
 
+## Learning Mode
+
+Learning mode is a feature that grants your bot the ability to use Botkit Studio's API to
+create new reply scripts interactively through the chat interface. Learning mode is **enabled by default**,
+but should be disabled before making your bot availble to the public.
+
+To enable learning mode, add `LEARNING_MODE=true` to the `.env` file.
+Also, within the Botkit Studio interface, make sure the script named "create_a_reply" is set as the fallback reply.
+This option can be found on your bot's settings tab.
+
+To disable learning mode, comment out the line starting with `LEARNING_MODE` in the `.env` file.
+Also, make sure to change the fallback script setting in Botkit Studio to point to a script other than "create_a_reply".
+If you forget, your bot will remind you.
+
 ## Enable Message History
 
 Botkit Anywhere comes bundled with a message history feature which will capture and track all messages sent during a user's communication with the bot.  This log of messages is available via an API call which is used by the built-in client to display previously sent messages when a user reconnects.

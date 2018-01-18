@@ -12,6 +12,8 @@ set up your own bot, sign up for a free developer account and you'll
 be guided through the process of configuring and deploying an instance
 of this starter kit!
 
+Adding new content and replies to your new bot is as easy as chatting with it using the built in chat client! You'll be a bot master in no time.
+
 **[![Sign up for Botkit Studio](https://raw.githubusercontent.com/howdyai/botkit/master/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
 
 Alternately, you can deploy this starter kit project directly to Glitch, or clone it to your own development environment, then add a Botkit Studio access token at a later point.
@@ -94,7 +96,7 @@ and account-linking features that enable you to identify existing users to your 
 * [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
 * [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
 * [How to enable message history API](docs/botkit_chat_server.md#enable-message-history)
-
+* [Enable or Disable Learning Mode](docs/botkit_chat_server.md#learning-mode)
 
 # Developer & Support Community
 
