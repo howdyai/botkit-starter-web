@@ -1,6 +1,6 @@
 {
   "name": "botkit-starter-web",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "A starter kit for building a custom bot for your website with Botkit Studio",
   "main": "bot.js",
   "scripts": {
