@@ -13,13 +13,13 @@ module.exports = function(controller) {
         convo.setVar('bot',convo.context.bot.identity);
 
         // if learning mode is not enabled, redirect to an error
-        if (!process.env.LEARNING_MODE) {
+        if (process.env.LEARNING_MODE!=='true') {
             convo.gotoThread('error_not_enabled')
         }
         next();
     });
 
-    if (process.env.LEARNING_MODE) {
+    if (process.env.LEARNING_MODE=='true') {
         console.log('--------------------------------------------');
         console.log('> LEARNING MODE ENABLED!');
         console.log('> This bot can modify itself! Disable learning mode in production!!')
