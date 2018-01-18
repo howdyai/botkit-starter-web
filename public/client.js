@@ -118,7 +118,7 @@
         var that = this;
 
         if (user && user.id) {
-          Botkit.setCookie('guid', user.id, 1);
+          Botkit.setCookie('botkit_guid', user.id, 1);
 
           user.timezone_offset = new Date().getTimezoneOffset();
           that.current_user = user;
@@ -135,12 +135,12 @@
       },
       connectWebhook: function() {
         var that = this;
-        if (Botkit.getCookie('guid')) {
-          that.guid = Botkit.getCookie('guid');
+        if (Botkit.getCookie('botkit_guid')) {
+          that.guid = Botkit.getCookie('botkit_guid');
           connectEvent = 'welcome_back';
         } else {
           that.guid = that.generate_guid();
-          Botkit.setCookie('guid', that.guid, 1);
+          Botkit.setCookie('botkit_guid', that.guid, 1);
         }
 
         that.getHistory();
@@ -160,12 +160,12 @@
         that.socket = new WebSocket(ws_url);
 
         var connectEvent = 'hello';
-        if (Botkit.getCookie('guid')) {
-          that.guid = Botkit.getCookie('guid');
+        if (Botkit.getCookie('botkit_guid')) {
+          that.guid = Botkit.getCookie('botkit_guid');
           connectEvent = 'welcome_back';
         } else {
           that.guid = that.generate_guid();
-          Botkit.setCookie('guid', that.guid, 1);
+          Botkit.setCookie('botkit_guid', that.guid, 1);
         }
 
         that.getHistory();
@@ -252,7 +252,7 @@
         user.timezone_offset = new Date().getTimezoneOffset();
 
         this.guid = user.id;
-        Botkit.setCookie('guid', user.id, 1);
+        Botkit.setCookie('botkit_guid', user.id, 1);
 
         this.current_user = user;
 

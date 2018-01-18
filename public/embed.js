@@ -27,14 +27,14 @@ var Botkit = {
     if (this.container) {
       this.container.className = 'active';
     }
-    this.setCookie('messenger_active', this.active);
+    this.setCookie('botkit_messenger_active', this.active);
   },
   deactivate: function() {
     this.active = false;
     if (this.container) {
       this.container.className = '';
     }
-    this.setCookie('messenger_active', this.active);
+    this.setCookie('botkit_messenger_active', this.active);
   },
   toggle: function() {
     if (this.active) {
@@ -57,7 +57,7 @@ var Botkit = {
           user: Botkit.current_user ? Botkit.current_user : null,
         });
 
-        if (Botkit.getCookie('messenger_active') == 'true') {
+        if (Botkit.getCookie('botkit_messenger_active') == 'true') {
           Botkit.activate();
         }
         console.log('Embedded Botkit: Ready!');
