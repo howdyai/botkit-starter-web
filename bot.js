@@ -108,10 +108,6 @@ if (process.env.studio_token) {
     });
 } else {
 
-    controller.on('message_received', function(bot, message) {
-      bot.reply(message, 'I need an API token from Botkit Studio to do more stuff. Get one here: https://studio.botkit.ai')
-    });
-
     console.log('~~~~~~~~~~');
     console.log('NOTE: Botkit Studio functionality has not been enabled');
     console.log('To enable, pass in a studio_token parameter with a token from https://studio.botkit.ai/');
