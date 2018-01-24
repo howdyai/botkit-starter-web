@@ -6,8 +6,15 @@
     <div id="welcome">
         <h1>I'm a bot!</h1>
 
+        {{#if bot.botkit_studio_id}}
         <p><a href="https://studio.botkit.ai/app/bots/{{bot.botkit_studio_id}}">Access my dashboard</a></p>
-
+        {{else}}
+        <p>
+            <a href="https://studio.botkit.ai/">Sign up for Botkit Studio</a>
+            to enable my cloud features like collaborative dialog editing, analytics,
+            training tools.
+        </p>
+        {{/if}}
         <p><a href="/chat.html">Make me full screen</a></p>
         <p><a href="/embed">Embed me in a web site</a></p>
         <p><a href="https://github.com/howdyai/botkit-starter-web">Documentation</a></p>
