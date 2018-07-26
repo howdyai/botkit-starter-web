@@ -14,7 +14,7 @@ of this starter kit!
 
 Adding new content and replies to your new bot is as easy as chatting with it using the built in chat client! You'll be a bot master in no time.
 
-**[![Sign up for Botkit Studio](https://raw.githubusercontent.com/howdyai/botkit/master/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
+**[![Sign up for Botkit Studio](https://botkit.ai/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
 
 Alternately, you can deploy this starter kit project directly to Glitch, or clone it to your own development environment, then add a Botkit Studio access token at a later point.
 
