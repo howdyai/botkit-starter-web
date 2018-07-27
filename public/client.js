@@ -26,7 +26,7 @@
         this.message_window.dispatchEvent(event);
       },
       request: function(url, body) {
-        that = this;
+        var that = this;
         return new Promise(function(resolve, reject) {
           var xmlhttp = new XMLHttpRequest();
 
@@ -55,6 +55,7 @@
 
       },
       send: function(text, e) {
+	var that = this;
         if (e) e.preventDefault();
         if (!text) {
           return;
@@ -88,7 +89,7 @@
         }
       },
       getHistory: function(guid) {
-        that = this;
+        var that = this;
         if (that.guid) {
           that.request('/botkit/history', {
             user: that.guid
@@ -104,7 +105,7 @@
         }
       },
       webhook: function(message) {
-        that = this;
+        var that = this;
 
         that.request('/botkit/receive', message).then(function(message) {
           that.trigger(message.type, message);
@@ -223,6 +224,7 @@
         this.input.focus();
       },
       renderMessage: function(message) {
+        var that = this;
         if (!that.next_line) {
           that.next_line = document.createElement('div');
           that.message_list.appendChild(that.next_line);
