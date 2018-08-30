@@ -10,7 +10,7 @@ Skill modules are Javascript files that live in the projects `skills/` folder,
 and get automatically loaded into the application when it boots.
 
 Skill modules can contain any type of code, but most of the time will consist
-of one or more Botkit event handers, middlewares, or related features. [Refer to the main Botkit READMEs for full documentation.](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
+of one or more Botkit event handers, middlewares, or related features. [Refer to the main Botkit READMEs for full documentation.](https://botkit.ai/docs/core.html)
 
 Sample code for a simple skill module is below. To enable this module, copy this code into a file in this project called `skills/example.js` and restart your bot.
 
