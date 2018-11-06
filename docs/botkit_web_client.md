@@ -61,12 +61,13 @@ Botkit.triggerScript('help','help_with_checkout');
 
 Identify an existing user to the chat widget. This can be used to identify the user AFTER the chat begins, instead of passing in the information to Botkit.boot().
 
-
 ## Share User Accounts / Profile data with Botkit
 
 In order to seamlessly integrate your new bot with your existing app or website, Botkit supports sharing user account information between the main app and the bot.
 
 To do this, either call [Botkit.boot(user)](#botkitbootuser) with the optional user profile parameter, or call [Botkit.identifyUser(user)](#botkitidentifyuseruser) after the connection has been established.
+
+It is important to note that Botkit does not provide any mechanism for validating or verifying the identity of the user passed in via these mechanisms. Used without validation, users can potentially access content associated with other users. For this reason, we recommend that Botkit Anywhere not be used to handle sensitive or private information unless substantial security mechanisms are put in place.
 
 If provided, user information will be used in a variety of ways:
 

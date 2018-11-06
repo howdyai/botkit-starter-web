@@ -69,4 +69,6 @@ Botkit Anywhere comes bundled with a message history feature which will capture 
 
 This is particularly useful when the bot is embedded in a site, as each time a user navigates to a new page, the chat widget will have to establish a brand new connection and repopulate the interface.
 
-By default, the message history feature is disabled. To enable it, specify a MongoDB connect string in your applications environment as `MONGO_URI`. Once set, your Botkit will automatically capture and store messages, as well as serve them up to the web chat client.
+By default, the message history feature is disabled. Before you enable this plugin, you must first implement an identity verification mechanism for your users. As implemented, calls to this API are not authenticated, which would allow potentially sensitive information contained in message history to be exposed.  This module should be considered a proof of concept reference design only, and is not production ready!
+
+To enable this module, you'll need to uncomment the code, implement additional security measures, and specify a MongoDB connect string in your applications environment as `MONGO_URI`. Once set, your Botkit will automatically capture and store messages, as well as serve them up to the web chat client.
