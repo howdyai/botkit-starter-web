@@ -10,7 +10,6 @@
     "body-parser": "^1.18.3",
     "botkit": "^0.6.20",
     "botkit-storage-mongo": "^1.0.6",
-    "botkit-studio-metrics": "0.0.4",
     "debug": "^3.1.0",
     "express": "^4.16.4",
     "express-hbs": "^1.0.4",
