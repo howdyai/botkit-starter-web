@@ -44,17 +44,13 @@ module.exports = function(controller) {
 }
 ```
 
-## Botkit Studio Skill Generator
+## Botkit CMS Skills
 
-Conversations powered by Botkit Studio's content management APIs have additional middleware endpoints and events that can be used to extend and alter the functionality of the pre-scripted conversations.
+Conversations powered by Botkit CMS's content management APIs have additional middleware endpoints and events that can be used to extend and alter the functionality of the pre-scripted conversations.
 
-To make it easier to create skill modules related to Studio scripts, boilerplate skill files can be automatically generated from within the Studio interface.
+* [Learn more about Botkit CMS script events](https://botkit.ai/docs/readme-studio.html#controllerstudiobefore)
 
-Inside the script editor, click the "Code" button. A dialog box will appear with code that can be copy-pasted or downloaded, and added to your projects `skills/` folder.
-
-* [Learn more about Botkit Studio script events](https://github.com/howdyai/botkit/blob/master/docs/readme-studio.md#controllerstudiobefore)
-
-A skill module built to work with a Botkit Studio script called "onboarding" might look something like this. Note that rather than directly using Botkit's `hears` and `on` handlers, this module uses Botkit Studio's more sophisticated conversation events that provide a cleaner separation of content and functionality.
+A skill module built to work with a Botkit CMS script called "onboarding" might look something like this. Note that rather than directly using Botkit's `hears` and `on` handlers, this module uses Botkit CMS's more sophisticated conversation events that provide a cleaner separation of content and functionality.
 
 ```js
 module.exports = function(controller) {

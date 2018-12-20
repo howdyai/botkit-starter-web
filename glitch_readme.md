@@ -1,11 +1,9 @@
 # Howdy, bot builder!
 ## When you see "Show Live" in the upper left corner, your new bot app is live.
-## Click the sunglasses to view your app, then go back to [Botkit Studio](https://studio.botkit.ai) to finish up.
+## Click the sunglasses to view your app!
 
 ### Having trouble?
 * You should check [that your .env file](?path=.env:1:0) has all the correct tokens.
-
-* The [Botkit Studio knowledge base](http://botkit.groovehq.com/help_center) contains in-depth information about using Botkit Studio, or you can [contact us](https://botkit.groovehq.com/knowledge_base/topics/contact-us-23) directly.
 
 * *Raise your hand!* - Glitch allows users to ask the community for help directly from the editor! For more information on raising your hand, [read this blog post.](https://medium.com/glitch/just-raise-your-hand-how-glitch-helps-aa6564cb1685)
 

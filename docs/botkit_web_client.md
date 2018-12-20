@@ -32,7 +32,7 @@ Additional functionality used by the iframe embed:
 Initialize the embedded chat widget.  This will cause the widget to connect to the chat service and start up.
 
 If your website has user accounts, and you want to identify the existing user to the chat widget,
-you can include user profile information in the call to Botkit.boot(). This information will appear in the Botkit Studio analytics, and can be used by the bot in other ways.
+you can include user profile information in the call to Botkit.boot(). 
 The user object can contain the following fields:
 
 | Field | Description
@@ -44,18 +44,6 @@ The user object can contain the following fields:
 | full_name | full name
 | gender | 'male' or 'female'
 | timezone | Timezone description "America/Chicago"
-
-#### Botkit.triggerScript(script_name, thread_name)
-
-Trigger the execution of a Botkit Studio script. This will cause your bot to retrieve the specified script from Botkit Studio's API,
-and then perform the specified thread with the user.
-
-This can be used to trigger specific bot actions from the main web page. For example, your bot might respond to a user navigating to the help page,
-or offer assistance during an ecommerce checkout flow.
-
-```js
-Botkit.triggerScript('help','help_with_checkout');
-```
 
 #### Botkit.identifyUser(user)
 
@@ -72,7 +60,6 @@ It is important to note that Botkit does not provide any mechanism for validatin
 If provided, user information will be used in a variety of ways:
 
 * [Message history](botkit_chat_server.md#enable-message-history) will be associated with the existing user account
-* [Botkit Studio's analytics system](../readme.md#analytics) will display up-to-date user profile data in various reports
 * Your Botkit application can access the account information using the [built-in storage mechanisms](https://github.com/howdyai/botkit/blob/master/docs/storage.md), making it easier to use this information during conversations or inside [skill modules](how_to_build_skills.md).
 
 ## Embed Botkit in a Website with iFrames
@@ -201,9 +188,9 @@ Note: The functionality of the web chat interface uses the `id` attributes of el
 </div>
 ```
 
-## Using Botkit Studio custom fields to add custom features
+## Using Botkit CMS custom fields to add custom features
 
-Botkit Studio's dialog authoring CMS supports the ability to add custom fields to any message.
+Botkit CMS's dialog authoring tool supports the ability to add custom fields to any message.
 These fields are passed unmodified through the client to your chat widget, and can be used in the template.
 
 You can include any fields you want in your message objects using this feature, and render them however you desire.  The Handlebars template system supports conditionals, iterators and other helper functions which can be used to create interactive elements and more complex attachments.

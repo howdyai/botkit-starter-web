@@ -6,40 +6,31 @@ Botkit Anywhere is a self-contained chat server, API and web-based messaging cli
 
 ## Get Started
 
-Botkit Anywhere is built to work hand-in-hand with Botkit Studio, a
-web-based bot building, content management and analytics platform. To
-set up your own bot, sign up for a free developer account and you'll
-be guided through the process of configuring and deploying an instance
-of this starter kit!
-
-Adding new content and replies to your new bot is as easy as chatting with it using the built in chat client! You'll be a bot master in no time.
-
-**[![Sign up for Botkit Studio](https://botkit.ai/docs/studio.png)](https://studio.botkit.ai/signup?code=webreadme)**
-
-Alternately, you can deploy this starter kit project directly to Glitch, or clone it to your own development environment, then add a Botkit Studio access token at a later point.
+You can deploy this starter kit project directly to Glitch, or clone it to your own development environment:
 
 * [Remix on Glitch](https://glitch.com/~botkit-web)
 
-## Add Features with Botkit Studio
+* Use the Botkit command line utility to install locally:
 
-Bots can be thought of as a series of pre-defined conversations, navigated by users who exchange messages with the bot application. The bot is responsible for replying with the appropriate message, and taking whatever automated actions are necessary to satisfy the user.
+```bash
+npm i -g botkit
+botkit new -p web
+```
 
-Each "feature" of your bot will consist of one or more conversations, along with some code to power the related actions.
+## Add Features with Botkit CMS
 
-Botkit Studio enables developers, designers, copywriters and other botmakers to build features for bots
-without writing any code by providing dialog authoring and content management tools. The visual authoring environment in Botkit Studio can be used to create branching conversations, Q&A systems, complex transactions, or any other type of conversational content.
+Bots can be thought of as a series of pre-defined conversations, navigated by users who exchange messages with the bot application. The bot is responsible for replying with the appropriate message, and taking whatever automated actions are necessary to satisfy the user. Each "feature" of your bot will consist of one or more conversations, along with some code to power the related actions.
 
-Conversational content in Botkit Studio can be updated and expanded at any time,
-without requiring changes to the bot's code. With help from Botkit's reports
-and operational tools, developers can ensure that their bot is provided the
-right answers to all the important questions.
+[Botkit CMS](https://github.com/howdyai/botkit-cms) is an optional add-on for Botkit that enables developers, designers, copywriters and other botmakers to build features for bots without writing any code by providing dialog authoring and content management tools. The visual authoring environment in Botkit CMS can be used to create branching conversations, Q&A systems, complex transactions, or any other type of conversational content.
+
+Conversational content in Botkit CMS can be updated and expanded at any time, without requiring changes to the bot's code.
 
 Then, with just a bit of code, your bot can access and use information from databases,
 APIs and third party services as part of the conversation. The business logic
-of your bot stays clean and easy to maintain by separating the form from the functionality. Botkit Studio will even generate this boilerplate code for you!
+of your bot stays clean and easy to maintain by separating the form from the functionality.
 
-* [Botkit Studio Knowledge Base](http://botkit.groovehq.com/help_center)
-* [Botkit Studio API documentation](https://github.com/howdyai/botkit/blob/master/docs/readme-studio.md#why-use-botkit-studio)
+[Botkit CMS](https://github.com/howdyai/botkit-cms)
+
 
 ## The full power of Botkit, in your app or site
 
@@ -53,15 +44,6 @@ Javascript modules containing a set of specialized pattern matchers, handler fun
 * **[How to build Botkit Skill Modules](docs/how_to_build_skills.md)**
 * [Full Botkit Documentation](https://github.com/howdyai/botkit/blob/master/docs/readme.md#developing-with-botkit)
 
-
-## Analytics
-
-Out of the box, Botkit Anywhere works with Botkit Studio's analytics capabilities,
-which includes custom metrics, daily, weekly and monthly stats, user retention reports,
-a queryable customer database, and full transcripts of every conversation your bot conducts.
-
-* [How to share user account/profile info with Botkit](docs/botkit_web_client.md#share-user-accounts--profile-data-with-botkit)
-* [Botkit Studio Metrics Knowledge Base](http://botkit.groovehq.com/knowledge_base/categories/metrics-7)
 
 ## Customizable web-based chat client
 
@@ -100,12 +82,12 @@ and account-linking features that enable you to identify existing users to your 
 
 # Developer & Support Community
 
-You can find full documentation for Botkit on our [GitHub page](https://github.com/howdyai/botkit/blob/master/readme.md). Botkit Studio users can access the [Botkit Studio Knowledge Base](https://botkit.groovehq.com/help_center) for help in managing their account.
+You can find full documentation for Botkit on [our website](https://botkit.ai/docs).
 
 ###  Need more help?
 * Glitch allows users to ask the community for help directly from the editor! For more information on raising your hand, [read this blog post.](https://medium.com/glitch/just-raise-your-hand-how-glitch-helps-aa6564cb1685)
 
-* Join our thriving community of Botkit developers and bot enthusiasts at large. Over 4500 members strong, [our open Slack group](http://community.botkit.ai) is _the place_ for people interested in the art and science of making bots.
+* Join our thriving community of Botkit developers and bot enthusiasts at large. Over 9000 members strong, [our open Slack group](http://community.botkit.ai) is _the place_ for people interested in the art and science of making bots.
 
  Come to ask questions, share your progress, and commune with your peers!
 
