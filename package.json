@@ -1,6 +1,6 @@
 {
   "name": "botkit-starter-web",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A starter kit for building a custom bot for your website with Botkit Studio",
   "main": "bot.js",
   "scripts": {
@@ -8,17 +8,15 @@
   },
   "dependencies": {
     "body-parser": "^1.18.3",
-    "botkit": "^0.6.20",
+    "botkit": "^0.7.0",
     "botkit-storage-mongo": "^1.0.6",
-    "botkit-studio-metrics": "0.0.4",
     "debug": "^3.1.0",
     "express": "^4.16.4",
     "express-hbs": "^1.0.4",
     "mongoose": "^4.13.7",
     "node-env-file": "^0.1.8",
     "querystring": "^0.2.0",
-    "request": "^2.88.0",
-    "wordfilter": "^0.2.6"
+    "request": "^2.88.0"
   },
   "devDependencies": {},
   "repository": {
