@@ -22,7 +22,7 @@ module.exports = function(controller) {
     // I can add handlers and specify middlewares here!
 
     // respond to the `hello` event, fired when a web chat begins with a new user
-    controller.on('hello',  'message_received', function(bot, message) {
+    controller.on('hello', function(bot, message) {
 
         bot.reply(message,'Welcome, new human!');
 
