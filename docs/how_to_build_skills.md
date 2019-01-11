@@ -29,7 +29,7 @@ module.exports = function(controller) {
     });
 
     // listen for the word "help"
-    controller.hears('help', function(bot, message) {
+    controller.hears('help', 'message_received', function(bot, message) {
 
         bot.reply(message,'Need help? I am here!');
 
