@@ -78,7 +78,6 @@ and account-linking features that enable you to identify existing users to your 
 * [Communicating with Websockets](docs/botkit_chat_server.md#using-websockets)
 * [Communicating with Webhooks](docs/botkit_chat_server.md#using-webhooks)
 * [How to enable message history API](docs/botkit_chat_server.md#enable-message-history)
-* [Enable or Disable Learning Mode](docs/botkit_chat_server.md#learning-mode)
 
 # Developer & Support Community
 
