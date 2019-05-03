@@ -1,6 +1,6 @@
 # This repo is deprecated!
 
-To get a fresh Botkit starter kit, use the Yeoman generator!
+To get a fresh Botkit starter kit, use the Yeoman generator or [remix a starter kit on Glitch](https://glitch.com/botkit)
 
 ```
 npm install -g yo generator-botkit
